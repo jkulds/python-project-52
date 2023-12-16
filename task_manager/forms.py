@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, \
 from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 
-from task_manager.models import TaskStatus
+from task_manager.models import TaskStatus, TaskModel
 
 
 class RegistrationForm(UserCreationForm):
@@ -53,3 +53,9 @@ class TaskStatusForm(forms.ModelForm):
     class Meta:
         model = TaskStatus
         fields = ['name']
+
+
+class TaskModelForm(forms.ModelForm):
+    class Meta:
+        model = TaskModel
+        fields = ['title', 'description', 'assignee', 'status']

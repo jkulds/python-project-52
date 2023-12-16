@@ -1,12 +1,11 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
 from task_manager.forms import RegistrationForm, LoginForm, \
-    CustomUserChangeForm
-from task_manager.models import TaskStatus
+    CustomUserChangeForm, TaskStatusForm, TaskModelForm
+from task_manager.models import TaskStatus, TaskModel
 
 
 def index(request):
@@ -81,12 +80,7 @@ def register(request):
 
 def status_list(request):
     statuses = TaskStatus.objects.all()
-    return render(request, 'status_list.html', {'statuses': statuses})
-
-
-def status_detail(request, status_id):
-    status = get_object_or_404(TaskStatus, pk=status_id)
-    return render(request, 'status_detail.html', {'status': status})
+    return render(request, 'statuses/status_list.html', {'statuses': statuses})
 
 
 def status_create(request):
@@ -97,10 +91,11 @@ def status_create(request):
             return redirect('status_list')
     else:
         form = TaskStatusForm()
-    return render(request, 'status_form.html', {'form': form})
+    return render(request, 'statuses/status_create.html', {'form': form})
 
-def status_update(request, status_id):
-    status = get_object_or_404(TaskStatus, pk=status_id)
+
+def status_update(request, pk):
+    status = get_object_or_404(TaskStatus, pk=pk)
     if request.method == 'POST':
         form = TaskStatusForm(request.POST, instance=status)
         if form.is_valid():
@@ -108,9 +103,32 @@ def status_update(request, status_id):
             return redirect('status_list')
     else:
         form = TaskStatusForm(instance=status)
-    return render(request, 'status_form.html', {'form': form})
+    return render(request, 'statuses/status_create.html', {'form': form})
 
-def status_delete(request, status_id):
-    status = get_object_or_404(TaskStatus, pk=status_id)
+
+def status_delete(request, pk):
+    status = get_object_or_404(TaskStatus, pk=pk)
     status.delete()
     return redirect('status_list')
+
+def task_list(request):
+    tasks = TaskModel.objects.all()
+    return render(request, 'tasks/task_list.html', {'tasks': tasks})
+
+
+def task_detail(request, pk):
+    task = get_object_or_404(TaskModel, pk=pk)
+    return render(request, 'tasks/task_detail.html', {'task': task})
+
+
+def task_create(request):
+    if request.method == 'POST':
+        form = TaskModelForm(request.POST)
+        if form.is_valid():
+            task = form.save(commit=False)
+            task.author = request.user
+            task.save()
+            return redirect('task_list')
+    else:
+        form = TaskModelForm()
+    return render(request, 'tasks/task_form.html', {'form': form})

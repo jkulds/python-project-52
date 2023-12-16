@@ -21,7 +21,7 @@ dev:
 	poetry run python manage.py runserver 5000
 
 migrate:
-	poetry run python manage.py makemigrations
+	poetry run python manage.py makemigrations task_manager
 	poetry run python manage.py migrate
 
 PORT ?= 8000
