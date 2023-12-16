@@ -22,57 +22,12 @@
             <td>{{ user.last_name }}</td>
             <td>{{ user.date_joined }}</td>
             <td>
-              <a class="btn waves-effect waves-light" href="{% url 'edit_user' username=user.username %}">Редактировать</a>
-              <a class="btn waves-effect waves-light red" onclick="confirmDelete('{{ user.username }}')">Удалить</a>
+              <a class="btn waves-effect waves-light" href="{% url 'edit_user' pk=user.id %}">Редактировать</a>
+              <a class="btn waves-effect waves-light red" href="{% url 'delete_user' pk=user.id %}">Удалить</a>
             </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
-
-  <!-- Modal Structure -->
-  <div id="confirmationModal" class="modal">
-    <div class="modal-content">
-      <h4>Подтверждение удаления</h4>
-      <p>Вы уверены, что хотите удалить пользователя <span id="deleteUsername"></span>?</p>
-    </div>
-    <div class="modal-footer">
-      <button class="modal-close waves-effect waves-green btn-flat">Отмена</button>
-      <a id="confirmDeleteLink" class="waves-effect waves-light btn red">Удалить</a>
-    </div>
-  </div>
-
-    <script>
-      function confirmDelete(username) {
-        document.getElementById('deleteUsername').innerText = username;
-
-        // Открываем модальное окно
-        var elem = document.getElementById('confirmationModal');
-        var instance = M.Modal.init(elem);
-        instance.open();
-
-        // Назначаем обработчик события для кнопки "Удалить"
-        document.getElementById('confirmDeleteLink').addEventListener('click', function() {
-          // Создаем и отправляем AJAX-запрос
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', "/users/" + username + "/delete/");
-          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-          var csrf_token = document.getElementsByName('csrfmiddlewaretoken')[0].value;
-          xhr.setRequestHeader('X-CSRFToken', csrf_token);
-          xhr.onload = function() {
-            if (xhr.status === 204) {
-              location.reload();
-              console.log('Пользователь успешно удален');
-            } else {
-              // Обработка ошибки (если необходимо)
-              console.error('Произошла ошибка при удалении пользователя');
-            }
-            // Закрываем модальное окно после завершения запроса
-            instance.close();
-          };
-          xhr.send();
-        });
-      }
-    </script>
 {% endblock %}
