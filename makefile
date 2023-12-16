@@ -18,7 +18,7 @@ selfcheck:
 check: selfcheck test-coverage lint
 
 dev:
-	poetry run python manage.py runserver
+	poetry run python manage.py runserver 5000
 
 migrate:
 	poetry run python manage.py makemigrations
@@ -26,13 +26,13 @@ migrate:
 
 PORT ?= 8000
 start:
-	poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager.wsgi
+	poetry run gunicorn -w 5 -b 0.0.0.0:5000 task_manager.wsgi
 
 shell:
 	poetry run python manage.py shell_plus --ipython
 
 makemessages:
-	 django-admin makemessages --ignore="static" --ignore=".env" -l ru
+	poetry run python manage.py makemessages --ignore="static" --ignore=".env" -l ru
 
 compilemessages:
-	django-admin compilemessages
+	poetry run python manage.py compilemessages
