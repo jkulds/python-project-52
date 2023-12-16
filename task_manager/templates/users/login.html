@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block content %}
+  <div class="row">
+    <h2 class="col s12">{% trans "Login" %}</h2>
+    <form class="col s12" method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s12">
+          {{ form.username }}
+          <label for="{{ form.username.id_for_label }}">{% trans "Username" %}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          {{ form.password }}
+          <label for="{{ form.password.id_for_label }}">{% trans "Password" %}</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        {% trans "Login" %}
+      </button>
+    </form>
+  </div>
+{% endblock %}

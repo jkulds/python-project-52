@@ -40,9 +40,23 @@
             <div class="nav-wrapper container">
                 <a href="{% url 'index' %}" class="brand-logo">{% block header %}ToDo list app{% endblock %}</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{% url 'users' %}">{% translate 'nav_users' %}</a></li>
-                    <li><a href="{% url 'login' %}">{% translate 'nav_login' %}</a></li>
-                    <li><a href="{% url 'register' %}">{% translate 'nav_register' %}</a></li>
+                    {% if user.is_authenticated %}
+                        <li><span>{% translate "logged_in_as" %} {{ user.username }}</span></li>
+                        <li><a href="{% url 'users' %}">{% translate 'nav_users' %}</a></li>
+                        <li><a href="{% url 'statuses' %}">{% translate 'nav_statuses' %}</a></li>
+                        <li><a href="{% url 'labels' %}">{% translate 'nav_labels' %}</a></li>
+                        <li><a href="{% url 'tasks' %}">{% translate 'nav_tasks' %}</a></li>
+                        <li>
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="waves-effect waves-light btn">{% translate 'nav_logout' %}</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'users' %}">{% translate 'nav_users' %}</a></li>
+                        <li><a href="{% url 'login' %}">{% translate 'nav_login' %}</a></li>
+                        <li><a href="{% url 'register' %}">{% translate 'nav_register' %}</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

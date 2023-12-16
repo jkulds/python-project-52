@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% block content %}
+  <div class="row">
+    <h2 class="col s12">{% trans "Registration" %}</h2>
+    <form class="col s12" method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+          {{ form.first_name }}
+          <label for="{{ form.first_name.id_for_label }}">{% trans "First Name" %}</label>
+        </div>
+        <div class="input-field col s6">
+          {{ form.last_name }}
+          <label for="{{ form.last_name.id_for_label }}">{% trans "Last Name" %}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          {{ form.username }}
+          <label for="{{ form.username.id_for_label }}">{% trans "Username" %}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          {{ form.password1 }}
+          <label for="{{ form.password1.id_for_label }}">{% trans "Password" %}</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          {{ form.password2 }}
+          <label for="{{ form.password2.id_for_label }}">{% trans "Confirm Password" %}</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        {% trans "Register" %}
+      </button>
+    </form>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  </div>
+{% endblock %}
