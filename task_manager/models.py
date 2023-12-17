@@ -1,13 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-
-class TimeStampMixin(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
+from base.TimeStampMixin import TimeStampMixin
 
 
 class TaskStatus(TimeStampMixin):
@@ -28,3 +22,5 @@ class TaskModel(TimeStampMixin):
 
     def __str__(self):
         return self.title
+
+

@@ -1,13 +1,10 @@
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from django.utils.translation import gettext as _
 
 from task_manager.forms import RegistrationForm, LoginForm, \
-    CustomUserChangeForm, TaskStatusForm, TaskModelForm
-from task_manager.models import TaskStatus, TaskModel
+    CustomUserChangeForm
 
 
 def index(request):
@@ -16,11 +13,11 @@ def index(request):
 
 def users(request):
     users = User.objects.all()
-    return render(request, 'users/user_list.html', {'users': users})
+    return render(request, 'user/user_list.html', {'users': users})
 
 
 def users_create(request):
-    return render(request, 'users/user_list.html', {'users': users})
+    return render(request, 'user/user_list.html', {'users': users})
 
 
 def user_login(request):
@@ -36,7 +33,7 @@ def user_login(request):
     else:
         form = LoginForm()
 
-    return render(request, 'users/login.html', {'form': form})
+    return render(request, 'user/login.html', {'form': form})
 
 
 def edit_user(request, pk):
@@ -47,10 +44,10 @@ def edit_user(request, pk):
             form.save()
             return redirect('users')
         else:
-            return render(request, 'users/edit.html', {'form': form, 'user': user})
+            return render(request, 'user/edit.html', {'form': form, 'user': user})
     else:
         form = CustomUserChangeForm(instance=user)
-    return render(request, 'users/edit.html', {'form': form, 'user': user})
+    return render(request, 'user/edit.html', {'form': form, 'user': user})
 
 
 def delete_user(request, pk):
@@ -59,7 +56,7 @@ def delete_user(request, pk):
         user.delete()
         return redirect('users')
 
-    return render(request, 'users/delete.html', {'user': user})
+    return render(request, 'user/delete.html', {'user': user})
 
 
 def register(request):
@@ -77,38 +74,4 @@ def register(request):
     else:
         form = RegistrationForm()
 
-    return render(request, 'users/register.html', {'form': form})
-
-
-def status_list(request):
-    statuses = TaskStatus.objects.all()
-    return render(request, 'statuses/status_list.html', {'statuses': statuses})
-
-
-def status_create(request):
-    if request.method == 'POST':
-        form = TaskStatusForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('status_list')
-    else:
-        form = TaskStatusForm()
-    return render(request, 'statuses/status_create.html', {'form': form})
-
-
-def status_update(request, pk):
-    status = get_object_or_404(TaskStatus, pk=pk)
-    if request.method == 'POST':
-        form = TaskStatusForm(request.POST, instance=status)
-        if form.is_valid():
-            form.save()
-            return redirect('status_list')
-    else:
-        form = TaskStatusForm(instance=status)
-    return render(request, 'statuses/status_create.html', {'form': form})
-
-
-def status_delete(request, pk):
-    status = get_object_or_404(TaskStatus, pk=pk)
-    status.delete()
-    return redirect('status_list')
+    return render(request, 'user/register.html', {'form': form})

@@ -16,11 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
-from django.urls import path
+from django.urls import path, include
 
 import task_manager.views
-from task_manager.forms import TaskModelCreateView, TaskModelUpdateView, \
-    TaskModelListView, TaskModelDeleteView, TaskModelDetailView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,14 +32,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('labels/', task_manager.views.register, name='labels'),
 
-    path('statuses/', task_manager.views.status_list, name='status_list'),
-    path('statuses/create/', task_manager.views.status_create, name='status_create'),
-    path('statuses/<int:pk>/update/', task_manager.views.status_update, name='status_update'),
-    path('statuses/<int:pk>/delete/', task_manager.views.status_delete, name='status_delete'),
+    path('statuses/', include('task_manager.status.urls')),
 
-    path('tasks/', TaskModelListView.as_view(), name='task_list'),
-    path('tasks/<int:pk>/', TaskModelDetailView.as_view(), name='task_detail'),
-    path('tasks/create/', TaskModelCreateView.as_view(), name='task_create'),
-    path('tasks/<int:pk>/update/',TaskModelUpdateView.as_view(), name='task_update'),
-    path('tasks/<int:pk>/delete/', TaskModelDeleteView.as_view(), name='task_delete'),
+    path('tasks/', include('task_manager.task.urls'))
 ]
