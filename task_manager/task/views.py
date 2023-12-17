@@ -4,12 +4,7 @@ from django.views.generic import CreateView, UpdateView, ListView, DetailView, \
     DeleteView
 
 from task_manager.models import TaskModel
-
-
-class TaskModelForm(forms.ModelForm):
-    class Meta:
-        model = TaskModel
-        fields = ['title', 'description', 'assignee', 'status']
+from task_manager.task.forms import TaskModelForm
 
 
 class TaskModelCreateView(CreateView):
@@ -26,7 +21,7 @@ class TaskModelCreateView(CreateView):
 class TaskModelUpdateView(UpdateView):
     model = TaskModel
     form_class = TaskModelForm
-    template_name = 'task/task_form.html'
+    template_name = 'form.html'
     context_object_name = 'task'
     success_url = reverse_lazy('task_list')
 

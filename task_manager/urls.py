@@ -30,9 +30,10 @@ urlpatterns = [
     path('users/<int:pk>/delete/', task_manager.views.delete_user, name='delete_user'),
     path('login/', task_manager.views.user_login, name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('labels/', task_manager.views.register, name='labels'),
 
     path('statuses/', include('task_manager.status.urls')),
 
-    path('tasks/', include('task_manager.task.urls'))
+    path('tasks/', include('task_manager.task.urls')),
+
+    path('labels/', include('task_manager.label.urls'))
 ]

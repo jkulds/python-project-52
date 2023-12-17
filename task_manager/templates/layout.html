@@ -44,7 +44,7 @@
                         <li><span>{% translate "logged_in_as" %} {{ user.username }}</span></li>
                         <li><a href="{% url 'users' %}">{% translate 'nav_users' %}</a></li>
                         <li><a href="{% url 'status_list' %}">{% translate 'nav_statuses' %}</a></li>
-                        <li><a href="{% url 'labels' %}">{% translate 'nav_labels' %}</a></li>
+                        <li><a href="{% url 'label_list' %}">{% translate 'nav_labels' %}</a></li>
                         <li><a href="{% url 'task_list' %}">{% translate 'nav_tasks' %}</a></li>
                         <li>
                             <form method="post" action="{% url 'logout' %}">

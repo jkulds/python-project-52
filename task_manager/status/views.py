@@ -15,14 +15,14 @@ class StatusListView(ListView):
 class StatusCreateView(CreateView):
     model = TaskStatus
     form_class = TaskStatusForm
-    template_name = 'status/status_create.html'
+    template_name = 'form.html'
     success_url = reverse_lazy('status_list')
 
 
 class StatusUpdateView(UpdateView):
     model = TaskStatus
     form_class = TaskStatusForm
-    template_name = 'status/status_create.html'
+    template_name = 'form.html'
     success_url = reverse_lazy('status_list')
 
     def get_object(self, queryset=None):
