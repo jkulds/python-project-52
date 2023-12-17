@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>{{ task.title }}</h2>
+    <p>{{ task.description }}</p>
+    <p>Status: {{ task.status }}</p>
+    <p>Assignee: {{ task.assignee }}</p>
+    <p>Author: {{ task.author }}</p>
+    <a class="btn" href="{% url 'task_update' pk=task.pk %}">Edit Task</a>
+    <a class="btn red" href="{% url 'task_delete' pk=task.pk %}">Delete Task</a>
+  </div>
+{% endblock %}

@@ -5,3 +5,7 @@ a, a:hover, a:visited, a:active{
   color:inherit;
   -webkit-tap-highlight-color: white;
 }
+
+select {
+  display: block !important;
+}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Создание/Редактирование задачи</h2>
+    <form method="post" action="{% if task.pk %}{% url 'task_update' pk=task.pk %}{% else %}{% url 'task_create' %}{% endif %}" class="col s12">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn waves-effect waves-light" type="submit">Сохранить</button>
+    </form>
+    <a class="btn" href="{% url 'task_list' %}">Назад к списку задач</a>
+  </div>
+{% endblock %}

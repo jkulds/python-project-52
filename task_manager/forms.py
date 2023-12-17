@@ -59,3 +59,8 @@ class TaskModelForm(forms.ModelForm):
     class Meta:
         model = TaskModel
         fields = ['title', 'description', 'assignee', 'status']
+
+    def __init__(self, *args, **kwargs):
+        super(TaskModelForm, self).__init__(*args, **kwargs)
+        self.fields['assignee'] = forms.ChoiceField(choices = [(x.pk, f"{x.first_name} {x.last_name}") for x in User.objects.all()], required=True, widget=forms.Select())
+

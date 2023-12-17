@@ -1,7 +1,9 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils.translation import gettext as _
 
 from task_manager.forms import RegistrationForm, LoginForm, \
     CustomUserChangeForm, TaskStatusForm, TaskModelForm
@@ -111,6 +113,7 @@ def status_delete(request, pk):
     status.delete()
     return redirect('status_list')
 
+
 def task_list(request):
     tasks = TaskModel.objects.all()
     return render(request, 'tasks/task_list.html', {'tasks': tasks})
@@ -126,9 +129,38 @@ def task_create(request):
         form = TaskModelForm(request.POST)
         if form.is_valid():
             task = form.save(commit=False)
-            task.author = request.user
+            task.assignee = User.objects.get(pk=form.data['assignee'])
             task.save()
             return redirect('task_list')
     else:
         form = TaskModelForm()
     return render(request, 'tasks/task_form.html', {'form': form})
+
+
+def task_update(request, pk):
+    task = get_object_or_404(TaskModel, pk=pk)
+
+    if request.method == 'POST':
+        form = TaskModelForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('task_list')
+    else:
+        form = TaskModelForm(instance=task)
+
+    return render(request, 'tasks/task_form.html', {'form': form})
+
+
+@login_required
+def task_delete(request, pk):
+    task = get_object_or_404(TaskModel, pk=pk)
+
+    if request.user == task.author:
+        if request.method == 'POST':
+            task.delete()
+            messages.success(request, _('Task deleted successfully.'))
+            return redirect('task_list')
+        return render(request, 'tasks/task_delete.html', {'task': task})
+    else:
+        messages.error(request, _('You do not have permission to delete this task.'))
+        return redirect('task_list')
