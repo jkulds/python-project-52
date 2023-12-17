@@ -1,13 +1,14 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 
 {% block content %}
   <div class="container">
-    <h2>{{ task.title }}</h2>
-    <p>{{ task.description }}</p>
-    <p>Status: {{ task.status }}</p>
-    <p>Assignee: {{ task.assignee }}</p>
-    <p>Author: {{ task.author }}</p>
-    <a class="btn" href="{% url 'task_update' pk=task.pk %}">Edit Task</a>
-    <a class="btn red" href="{% url 'task_delete' pk=task.pk %}">Delete Task</a>
+    <h4>{% translate "task" %} {{ task.title }}</h4>
+    <p>{% translate "task_description" %}: {{ task.description }}</p>
+    <p>{% translate "task_status" %}: {{ task.status }}</p>
+    <p>{% translate "task_assignee" %}: {{ task.assignee }}</p>
+    <p>{% translate "task_author" %}: {{ task.author }}</p>
+    <a class="btn" href="{% url 'task_update' pk=task.pk %}">{% translate "edit_btn" %}</a>
+    <a class="btn red" href="{% url 'task_delete' pk=task.pk %}">{% translate "delete_btn" %}</a>
   </div>
 {% endblock %}
