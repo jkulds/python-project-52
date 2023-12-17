@@ -2,7 +2,10 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, \
     UserChangeForm
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
+from django.views.generic import CreateView, UpdateView, ListView, DetailView, \
+    DeleteView
 
 from task_manager.models import TaskStatus, TaskModel
 
@@ -60,7 +63,43 @@ class TaskModelForm(forms.ModelForm):
         model = TaskModel
         fields = ['title', 'description', 'assignee', 'status']
 
-    def __init__(self, *args, **kwargs):
-        super(TaskModelForm, self).__init__(*args, **kwargs)
-        self.fields['assignee'] = forms.ChoiceField(choices = [(x.pk, f"{x.first_name} {x.last_name}") for x in User.objects.all()], required=True, widget=forms.Select())
 
+class TaskModelCreateView(CreateView):
+    model = TaskModel
+    form_class = TaskModelForm
+    template_name = 'tasks/task_form.html'
+    success_url = reverse_lazy('task_list')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class TaskModelUpdateView(UpdateView):
+    model = TaskModel
+    form_class = TaskModelForm
+    template_name = 'tasks/task_form.html'
+    context_object_name = 'task'
+    success_url = reverse_lazy('task_list')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class TaskModelListView(ListView):
+    model = TaskModel
+    template_name = 'tasks/task_list.html'
+    context_object_name = 'tasks'
+
+
+class TaskModelDetailView(DetailView):
+    model = TaskModel
+    template_name = 'tasks/task_detail.html'
+    context_object_name = 'task'
+
+
+class TaskModelDeleteView(DeleteView):
+    model = TaskModel
+    template_name = 'tasks/task_delete.html'
+    success_url = reverse_lazy('task_list')

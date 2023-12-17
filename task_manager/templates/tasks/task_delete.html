@@ -4,10 +4,10 @@
   <div class="container">
     <h2>Delete Task</h2>
     <p>Are you sure you want to delete "{{ task.title }}"?</p>
-    <form method="post" action="{% url 'task_delete' pk=task.pk %}">
+    <form method="post" action="">
       {% csrf_token %}
       <button class="btn red waves-effect waves-light" type="submit">Yes, delete</button>
     </form>
-    <a class="btn" href="{% url 'task_detail' pk=task.pk %}">Cancel</a>
+    <a class="btn" href="{% url 'task_list' %}">Cancel</a>
   </div>
 {% endblock %}

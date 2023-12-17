@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="container">
-    <h2>Создание/Редактирование задачи</h2>
+    <h2>Создание/Редактирование задачи {{ task }}</h2>
     <form method="post" action="{% if task.pk %}{% url 'task_update' pk=task.pk %}{% else %}{% url 'task_create' %}{% endif %}" class="col s12">
       {% csrf_token %}
       {{ form.as_p }}
