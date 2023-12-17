@@ -29,7 +29,7 @@ class TaskModel(TimeStampMixin):
                                on_delete=models.PROTECT,
                                related_name='authored_tasks')
     labels = models.ManyToManyField(LabelModel,
-                                    through='TaskLabelRelation',
+                                    through='TaskModelLabelModelRelation',
                                     through_fields=('task', 'label'),
                                     related_name='labels',
                                     blank=True)
@@ -38,6 +38,6 @@ class TaskModel(TimeStampMixin):
         return self.title
 
 
-class TaskLabelRelation(models.Model):
+class TaskModelLabelModelRelation(models.Model):
     task = models.ForeignKey(TaskModel, on_delete=models.CASCADE)
     label = models.ForeignKey(LabelModel, on_delete=models.PROTECT)

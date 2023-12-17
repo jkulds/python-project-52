@@ -4,6 +4,13 @@
   <div class="container">
     <h2>Task List</h2>
     <a class="btn" href="{% url 'task_create' %}">Create New Task</a>
+
+    <div>
+        <form method="get">
+            {{ filter.form }}
+            <button class="btn waves-effect waves-light" type="submit">Искать</button>
+        </form>
+    </div>
     <table class="highlight">
       <thead>
         <tr>
