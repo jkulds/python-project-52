@@ -6,9 +6,11 @@ from django.urls import reverse_lazy
 
 from django.utils.translation import gettext_lazy as _
 
+from task_manager.forms import PlaceholderAuthForm
+
 
 class LogIn(SuccessMessageMixin, LoginView):
-    form_class = AuthenticationForm
+    form_class = PlaceholderAuthForm
     template_name = 'form.html'
     success_message = _('Successfully login')
     success_url = reverse_lazy('index')
