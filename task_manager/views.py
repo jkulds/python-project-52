@@ -13,7 +13,7 @@ class LogIn(SuccessMessageMixin, LoginView):
     success_message = _('Successfully login')
     success_url = reverse_lazy('index')
     extra_context = {
-        'btn_text': _('login'),
+        'btn_text': _('login_btn'),
         'title': _('log in')
     }
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-18 22:47+0000\n"
+"POT-Creation-Date: 2023-12-18 23:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,7 +219,7 @@ msgstr "Выйти"
 msgid "nav_login"
 msgstr "Вход"
 
-#: task_manager/templates/layout.html:72 task_manager/user/views.py:25
+#: task_manager/templates/layout.html:72
 msgid "nav_register"
 msgstr "Регистрация"
 
@@ -243,25 +243,17 @@ msgstr "Создать задачу"
 msgid "search"
 msgstr "Искать"
 
-#: task_manager/user/forms.py:9
-#, fuzzy
-#| msgid "First Name"
-msgid "user_first_name"
-msgstr "Имя"
-
-#: task_manager/user/forms.py:11
-#, fuzzy
-#| msgid "task_name"
-msgid "user_last_name"
-msgstr "Фамилия"
-
-#: task_manager/user/forms.py:13
+#: task_manager/user/forms.py:15
 msgid "password"
 msgstr "Пароль"
 
-#: task_manager/user/forms.py:15
+#: task_manager/user/forms.py:18
 msgid "confirm password"
 msgstr "Подтвердите пароль"
+
+#: task_manager/user/views.py:25
+msgid "register"
+msgstr "Зарегистрировать"
 
 #: task_manager/user/views.py:35
 #, fuzzy
@@ -290,8 +282,8 @@ msgid "Successfully login"
 msgstr "Вы вошли!"
 
 #: task_manager/views.py:16
-msgid "login"
-msgstr "Вход"
+msgid "login_btn"
+msgstr "Войти"
 
 #: task_manager/views.py:17
 msgid "log in"
