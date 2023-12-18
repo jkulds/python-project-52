@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-18 05:36+0000\n"
+"POT-Creation-Date: 2023-12-18 19:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,37 +173,47 @@ msgstr "Действия"
 msgid "edit"
 msgstr "Редактировать"
 
+#: task_manager/templates/layout.html:55 task_manager/tests.py:19
+msgid "ToDo app"
+msgstr "ToDo app"
+
 #: task_manager/templates/layout.html:58
 msgid "logged_in_as"
 msgstr "Вы вошли как -"
 
 #: task_manager/templates/layout.html:59 task_manager/templates/layout.html:70
+#: task_manager/tests.py:25 task_manager/tests.py:43
 msgid "nav_users"
 msgstr "Пользователи"
 
-#: task_manager/templates/layout.html:60
+#: task_manager/templates/layout.html:60 task_manager/tests.py:27
+#: task_manager/tests.py:48
 msgid "nav_statuses"
 msgstr "Статусы"
 
-#: task_manager/templates/layout.html:61
+#: task_manager/templates/layout.html:61 task_manager/tests.py:29
+#: task_manager/tests.py:50
 msgid "nav_labels"
 msgstr "Метки"
 
-#: task_manager/templates/layout.html:62
+#: task_manager/templates/layout.html:62 task_manager/tests.py:31
+#: task_manager/tests.py:52
 msgid "nav_tasks"
 msgstr "Задачи"
 
-#: task_manager/templates/layout.html:66
+#: task_manager/templates/layout.html:66 task_manager/tests.py:33
+#: task_manager/tests.py:54
 msgid "nav_logout"
 msgstr "Выйти"
 
-#: task_manager/templates/layout.html:71
+#: task_manager/templates/layout.html:71 task_manager/tests.py:36
+#: task_manager/tests.py:45
 msgid "nav_login"
 msgstr "Вход"
 
 #: task_manager/templates/layout.html:72
 msgid "nav_register"
-msgstr "Зарегистрироваться"
+msgstr "Регистрация"
 
 #: task_manager/templates/layout.html:91
 msgid "source_code"

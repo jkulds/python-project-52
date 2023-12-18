@@ -52,7 +52,7 @@
     <header>
         <nav>
             <div class="nav-wrapper container">
-                <a href="{% url 'index' %}" class="brand-logo">{% block header %}ToDo list app{% endblock %}</a>
+                <a href="{% url 'index' %}" class="brand-logo">{% translate 'ToDo app' %}</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     {% if user.is_authenticated %}
                         <li><span>{% translate "logged_in_as" %} {{ user.username }}</span></li>
