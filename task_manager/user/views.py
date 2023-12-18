@@ -43,6 +43,10 @@ class UserDeleteView(AuthMixin, UserPermissionMixin,
     model = User
     template_name = 'user/delete.html'
     success_url = reverse_lazy('users')
+    protected_message = _("cant delete label because of using"),
+    protected_url = reverse_lazy('users')
+    permission_message = _('cant delete another user.')
+    permission_url = reverse_lazy('users')
     extra_context = {
         'btn_text': _('delete'),
         'title': _('delete user')

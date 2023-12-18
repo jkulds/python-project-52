@@ -48,6 +48,8 @@ class LabelDeleteView(AuthMixin, SuccessMessageMixin,
     template_name = 'labels/label_delete.html'
     success_url = reverse_lazy('label_list')
     context_object_name = 'label'
+    protected_message = _("cant delete label because of using"),
+    protected_url = reverse_lazy('label_list')
     extra_context = {
         'btn_text': _('delete'),
         'title': _('delete label')
