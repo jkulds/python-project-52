@@ -199,7 +199,7 @@ msgstr "Выйти"
 
 #: task_manager/templates/layout.html:71
 msgid "nav_login"
-msgstr "Войти"
+msgstr "Вход"
 
 #: task_manager/templates/layout.html:72
 msgid "nav_register"
@@ -300,7 +300,7 @@ msgstr "Вход"
 
 #: task_manager/views.py:17
 msgid "log in"
-msgstr "Войти"
+msgstr "Вход"
 
 #: task_manager/views.py:25
 msgid "Logger out"
