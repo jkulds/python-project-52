@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.test import TestCase, Client
 from django.urls import reverse
 
@@ -7,6 +8,9 @@ from task_manager.models import LabelModel
 class LabelModelTestCase(TestCase):
     def setUp(self):
         self.client = Client()
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpassword')
+        self.client.login(username='testuser', password='testpassword')
         self.label = LabelModel.objects.create(name='Test Label')
 
     def test_label_list_view(self):
