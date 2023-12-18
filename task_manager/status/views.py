@@ -44,10 +44,12 @@ class StatusUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
         return get_object_or_404(TaskStatus, pk=pk)
 
 
-class StatusDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin, DeleteView):
+class StatusDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
+                       DeleteView):
     model = TaskStatus
     template_name = 'status/status_delete.html'
     success_url = reverse_lazy('status_list')
+    context_object_name = 'status'
     extra_context = {
         'btn_text': _('delete'),
         'title': _('delete status?')

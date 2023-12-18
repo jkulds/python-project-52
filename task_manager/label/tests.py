@@ -16,18 +16,22 @@ class LabelModelTestCase(TestCase):
         self.assertContains(response, 'Test Label')
 
     def test_label_create_view(self):
-        response = self.client.post(reverse('label_create'), {'name': 'New Label'})
+        response = self.client.post(reverse('label_create'),
+                                    {'name': 'New Label'})
         self.assertEqual(response.status_code, 302)
         self.assertTrue(LabelModel.objects.filter(name='New Label').exists())
 
     def test_label_update_view(self):
-        response = self.client.post(reverse('label_update', args=[self.label.id]), {'name': 'Updated Label'})
+        response = self.client.post(reverse('label_update',
+                                            args=[self.label.id]),
+                                    {'name': 'Updated Label'})
         self.assertEqual(response.status_code, 302)
         self.label.refresh_from_db()
         self.assertEqual(self.label.name, 'Updated Label')
 
     def test_label_delete_view(self):
-        response = self.client.post(reverse('label_delete', args=[self.label.id]))
+        response = self.client.post(reverse('label_delete',
+                                            args=[self.label.id]))
         self.assertEqual(response.status_code, 302)
         self.assertFalse(LabelModel.objects.filter(name='Test Label').exists())
 

@@ -12,4 +12,3 @@ class LabelForm(forms.ModelForm):
     class Meta:
         model = LabelModel
         fields = ['name']
-        

@@ -7,4 +7,3 @@ class TaskStatusForm(forms.ModelForm):
     class Meta:
         model = TaskStatus
         fields = ['name']
-        
