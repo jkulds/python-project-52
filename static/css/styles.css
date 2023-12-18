@@ -9,3 +9,9 @@ a, a:hover, a:visited, a:active{
 select {
   display: block !important;
 }
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: relative !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}

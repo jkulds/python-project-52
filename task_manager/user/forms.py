@@ -41,9 +41,3 @@ class CustomUserChangeForm(UserChangeForm):
         self.fields['password2'].widget.attrs['placeholder'] = _(
             'Confirm password')
 
-
-class LoginForm(AuthenticationForm):
-    class Meta:
-        fields = ['username', 'password']
-
-

@@ -11,7 +11,7 @@
       {% if task.labels %}
         <p>{% translate "task_labels" %}</p>
           <ul>
-          {% for label in task.labels %}
+          {% for label in task.labels.all %}
               <li>{{ label }}</li>
           {% endfor %}
           </ul>

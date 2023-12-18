@@ -3,7 +3,7 @@
 {% block content %}
   <h2 class="header">Удалить пользователя {{ user.username }}?</h2>
   <div class="row">
-    <form class="col s12" method="post" action="{% url 'delete_user' pk=user.id %}">
+    <form class="col s12" method="post" action="{% url 'user_delete' pk=user.id %}">
       {% csrf_token %}
       {{ form.as_p }}
       <button class="btn waves-effect waves-light red" type="submit">Удалить</button>

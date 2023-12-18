@@ -11,13 +11,13 @@ class TaskModelFilter(FilterSet):
         label=_('Label')
     )
 
-    own_tasks = BooleanFilter(
-        label=_('My tasks'),
+    own = BooleanFilter(
+        label=_('own tasks'),
         widget=forms.CheckboxInput,
-        method='get_own_tasks',
+        method='filter_own',
     )
 
-    def get_own_tasks(self, queryset, name, value):
+    def filter_own(self, queryset, name, value):
         if value:
             return queryset.filter(author=self.request.user)
         return queryset
