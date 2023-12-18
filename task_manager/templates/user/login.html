@@ -4,7 +4,7 @@
 {% block content %}
   <div class="row">
     <h2 class="col s12">{% trans "Login" %}</h2>
-    <form class="col s12" method="post">
+    <form class="col s12" method="post" action="{% url 'login' %}">
       {% csrf_token %}
       <div class="row">
         <div class="input-field col s12">

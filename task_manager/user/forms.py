@@ -1,25 +1,10 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, \
-    UserChangeForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 
 
-class RegistrationForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30,
-                                 required=True,
-                                 help_text=_('required'))
-    last_name = forms.CharField(max_length=30,
-                                required=True,
-                                help_text=_('required'))
-
-    class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'username', 'password1',
-                  'password2']
-
-
-class CustomUserChangeForm(UserChangeForm):
+class UserEditForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True,
                                  help_text=_('required'))
     last_name = forms.CharField(max_length=30, required=True,
@@ -40,4 +25,3 @@ class CustomUserChangeForm(UserChangeForm):
             'Enter new password')
         self.fields['password2'].widget.attrs['placeholder'] = _(
             'Confirm password')
-

@@ -1,10 +1,8 @@
 from django.contrib.auth.models import User
-from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 
-from task_manager.user.forms import CustomUserChangeForm, \
-    RegistrationForm
+from task_manager.user.forms import UserEditForm
 
 
 class UserListView(ListView):
@@ -16,16 +14,16 @@ class UserListView(ListView):
 
 class UserCreateView(CreateView):
     model = User
-    template_name = 'user/register.html'
-    form_class = RegistrationForm
-    success_url = reverse_lazy('')
+    template_name = 'form.html'
+    form_class = UserEditForm
+    success_url = reverse_lazy('/')
 
 
 class UserUpdateView(UpdateView):
     model = User
-    template_name = 'user/edit.html'
-    form_class = CustomUserChangeForm
-    success_url = reverse_lazy('users')
+    template_name = 'form.html'
+    form_class = UserEditForm
+    success_url = reverse_lazy('/')
 
 
 class UserDeleteView(DeleteView):
