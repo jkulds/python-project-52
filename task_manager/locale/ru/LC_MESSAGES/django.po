@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-18 20:53+0000\n"
+"POT-Creation-Date: 2023-12-18 22:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/forms.py:10
+#: task_manager/forms.py:23 task_manager/forms.py:25
 msgid "username_placeholder"
 msgstr "Имя пользователя"
 
-#: task_manager/forms.py:12
+#: task_manager/forms.py:28 task_manager/forms.py:29
 msgid "password_placeholder"
 msgstr "Пароль"
 
@@ -47,7 +47,7 @@ msgid "create label"
 msgstr "Создать метку"
 
 #: task_manager/label/views.py:40 task_manager/status/views.py:38
-#: task_manager/task/views.py:36 task_manager/user/views.py:36
+#: task_manager/task/views.py:36 task_manager/user/views.py:38
 msgid "update"
 msgstr "Обновить"
 
@@ -55,7 +55,7 @@ msgstr "Обновить"
 msgid "update label"
 msgstr "обновить метку"
 
-#: task_manager/label/views.py:51 task_manager/user/views.py:46
+#: task_manager/label/views.py:51 task_manager/user/views.py:48
 msgid "cant delete label because of using"
 msgstr "Невозможно удалить, потому что еще используется"
 
@@ -65,7 +65,7 @@ msgstr "Невозможно удалить, потому что еще испо
 #: task_manager/templates/status/status_list.html:23
 #: task_manager/templates/task/task_detail.html:20
 #: task_manager/templates/task/task_list.html:37
-#: task_manager/templates/user/user_list.html:27 task_manager/user/views.py:51
+#: task_manager/templates/user/user_list.html:27 task_manager/user/views.py:53
 msgid "delete"
 msgstr "Удалить"
 
@@ -243,21 +243,6 @@ msgstr "Создать задачу"
 msgid "search"
 msgstr "Искать"
 
-#: task_manager/templates/user/login.html:6
-#: task_manager/templates/user/login.html:22
-msgid "Login"
-msgstr "Вход"
-
-#: task_manager/templates/user/login.html:12
-#: task_manager/templates/user/register.html:22
-msgid "Username"
-msgstr "Имя пользователя"
-
-#: task_manager/templates/user/login.html:18
-#: task_manager/templates/user/register.html:28
-msgid "Password"
-msgstr "Пароль"
-
 #: task_manager/templates/user/register.html:6
 msgid "Registration"
 msgstr "Регистрация"
@@ -269,6 +254,14 @@ msgstr "Имя"
 #: task_manager/templates/user/register.html:16
 msgid "Last Name"
 msgstr "Фамилия"
+
+#: task_manager/templates/user/register.html:22
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/user/register.html:28
+msgid "Password"
+msgstr "Пароль"
 
 #: task_manager/templates/user/register.html:34
 msgid "Confirm Password"
@@ -292,37 +285,46 @@ msgstr "Подтвердите пароль"
 msgid "create user"
 msgstr "Создать"
 
-#: task_manager/user/views.py:37
+#: task_manager/user/views.py:35
+#, fuzzy
+#| msgid "cant delete another user."
+msgid "cant edit another user"
+msgstr "Вы не можете удалять других пользователей"
+
+#: task_manager/user/views.py:39
 #, fuzzy
 #| msgid "update status"
 msgid "update user"
 msgstr "Обновить статус"
 
-#: task_manager/user/views.py:48
+#: task_manager/user/views.py:50
 msgid "cant delete another user."
 msgstr "Вы не можете удалять других пользователей"
 
-#: task_manager/user/views.py:52
+#: task_manager/user/views.py:54
 #, fuzzy
 #| msgid "delete status?"
 msgid "delete user"
 msgstr "удалить статус"
 
-#: task_manager/views.py:15
+#: task_manager/views.py:13
 msgid "Successfully login"
 msgstr "Вы вошли!"
 
-#: task_manager/views.py:18
+#: task_manager/views.py:16
 msgid "login"
 msgstr "Вход"
 
-#: task_manager/views.py:19
+#: task_manager/views.py:17
 msgid "log in"
 msgstr "Вход"
 
-#: task_manager/views.py:27
+#: task_manager/views.py:25
 msgid "Logger out"
 msgstr "Вы вышли"
+
+#~ msgid "Login"
+#~ msgstr "Вход"
 
 #, fuzzy
 #~| msgid "Username"
