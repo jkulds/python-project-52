@@ -32,7 +32,7 @@ shell:
 	poetry run python manage.py shell_plus --ipython
 
 makemessages:
-	poetry run python manage.py makemessages --ignore="static" --ignore=".env" -l ru
+	poetry run python manage.py makemessages --ignore venv -l ru
 
 compilemessages:
-	poetry run python manage.py compilemessages
+	poetry run python manage.py compilemessages --ignore=cache
