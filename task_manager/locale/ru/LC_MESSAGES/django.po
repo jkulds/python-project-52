@@ -258,7 +258,7 @@ msgstr "Подтвердите пароль"
 
 #: task_manager/templates/user/register.html:38
 msgid "Register"
-msgstr "Зарегистрироваться"
+msgstr "Регистрация"
 
 #: task_manager/user/forms.py:11
 msgid "password"
