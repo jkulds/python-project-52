@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-18 19:01+0000\n"
+"POT-Creation-Date: 2023-12-18 20:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/forms.py:10
+msgid "username_placeholder"
+msgstr "Имя пользователя"
+
+#: task_manager/forms.py:12
+msgid "password_placeholder"
+msgstr "Пароль"
 
 #: task_manager/label/forms.py:9 task_manager/models.py:18
 msgid "label name"
@@ -300,18 +308,23 @@ msgstr "Вы не можете удалять других пользовате�
 msgid "delete user"
 msgstr "удалить статус"
 
-#: task_manager/views.py:13
+#: task_manager/views.py:15
 msgid "Successfully login"
 msgstr "Вы вошли!"
 
-#: task_manager/views.py:16
+#: task_manager/views.py:18
 msgid "login"
 msgstr "Вход"
 
-#: task_manager/views.py:17
+#: task_manager/views.py:19
 msgid "log in"
 msgstr "Вход"
 
-#: task_manager/views.py:25
+#: task_manager/views.py:27
 msgid "Logger out"
 msgstr "Вы вышли"
+
+#, fuzzy
+#~| msgid "Username"
+#~ msgid "username"
+#~ msgstr "Имя пользователя"

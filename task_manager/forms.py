@@ -7,6 +7,6 @@ from django.utils.translation import gettext_lazy as _
 
 class PlaceholderAuthForm(AuthenticationForm):
     username = forms.CharField(
-        widget=TextInput(attrs={'placeholder': _('username')}))
+        widget=TextInput(attrs={'placeholder': _('username_placeholder')}))
     password = forms.CharField(
-        widget=PasswordInput(attrs={'placeholder': _('password')}))
+        widget=PasswordInput(attrs={'placeholder': _('password_placeholder')}))
