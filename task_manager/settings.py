@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'jkulds.ru', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'jkulds.ru', 'localhost', 'webserver']
 CSRF_TRUSTED_ORIGINS = [
     'http://jkulds.ru',
     'https://jkulds.ru',
