@@ -113,6 +113,8 @@ LANGUAGES = [
     ('ru', 'Russian')
 ]
 
+LOCALE_PATHS = (BASE_DIR / 'task_manager' / 'locale',)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 
 {% block content %}
-  <h2>Delete Label</h2>
-  <p>Are you sure you want to delete "{{ label.name }}"?</p>
+  <h2>{{ title }}</h2>
+  <p>{% translate "Are you sure you want to delete" %} "{{ label.name }}"?</p>
   <form method="post" class="col s12">
     {% csrf_token %}
-    <button type="submit" class="waves-effect waves-light btn red">Yes, delete it</button>
+    <button type="submit" class="waves-effect waves-light btn red">{{ btn_text }}</button>
   </form>
-  <a href="{% url 'label_list' %}" class="waves-effect waves-light btn">Cancel</a>
 {% endblock %}

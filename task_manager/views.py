@@ -11,11 +11,15 @@ class LogIn(SuccessMessageMixin, LoginView):
     form_class = AuthenticationForm
     template_name = 'form.html'
     success_message = _('Successfully login')
-    success_url = reverse_lazy('/')
+    success_url = reverse_lazy('index')
+    extra_context = {
+        'btn_text': _('login'),
+        'title': _('log in')
+    }
 
 
 class LogOut(SuccessMessageMixin, LogoutView):
-    success_url = reverse_lazy('/')
+    success_url = reverse_lazy('index')
 
     def dispatch(self, request, *args, **kwargs):
         messages.info(request, _('Logger out'))

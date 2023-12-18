@@ -24,4 +24,4 @@ class TaskModelFilter(FilterSet):
 
     class Meta:
         model = TaskModel()
-        fields = ['status', 'assignee']
+        fields = ['status', 'executor']

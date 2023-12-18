@@ -1,15 +1,16 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 
 {% block content %}
   <div class="container">
     <h2>Task List</h2>
-    <a class="btn" href="{% url 'task_create' %}">Create New Task</a>
+    <a class="btn" href="{% url 'task_create' %}">{% translate 'create new task' %}</a>
 
     <div>
         <form method="get">
             {{ filter.form }}
             <br>
-            <button class="btn waves-effect waves-light" type="submit">Искать</button>
+            <button class="btn waves-effect waves-light" type="submit">{% translate 'search' %}</button>
         </form>
     </div>
     <table class="highlight">
@@ -30,10 +31,10 @@
             <td><a href="{% url 'task_detail' pk=task.pk %}">{{ task.title }}</a></td>
             <td>{{ task.status }}</td>
             <td>{{ task.author.username }}</td>
-            <td>{{ task.assignee.username }}</td>
+            <td>{{ task.executor.username }}</td>
             <td>
-              <a href="{% url 'task_update' pk=task.pk %}" class="btn">Редактировать</a>
-              <a href="{% url 'task_delete' pk=task.pk %}" class="btn red">Удалить</a>
+              <a href="{% url 'task_update' pk=task.pk %}" class="btn">{% translate 'edit' %}</a>
+              <a href="{% url 'task_delete' pk=task.pk %}" class="btn red">{% translate 'delete' %}</a>
             </td>
           </tr>
         {% endfor %}

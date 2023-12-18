@@ -1,0 +1,270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-18 05:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/label/forms.py:9 task_manager/models.py:18
+msgid "label name"
+msgstr "Название метки"
+
+#: task_manager/label/views.py:16 task_manager/label/views.py:28
+#: task_manager/status/views.py:27
+msgid "create"
+msgstr "создать статус"
+
+#: task_manager/label/views.py:17
+msgid "label list"
+msgstr "Список меток"
+
+#: task_manager/label/views.py:29
+msgid "create label"
+msgstr "создать метку"
+
+#: task_manager/label/views.py:40 task_manager/status/views.py:38
+#: task_manager/task/views.py:35
+msgid "update"
+msgstr "обновить"
+
+#: task_manager/label/views.py:41
+msgid "update label"
+msgstr "обновить метку"
+
+#: task_manager/label/views.py:52 task_manager/status/views.py:52
+#: task_manager/task/views.py:70
+#: task_manager/templates/labels/label_list.html:20
+#: task_manager/templates/status/status_list.html:23
+#: task_manager/templates/task/task_detail.html:20
+#: task_manager/templates/task/task_list.html:37
+#: task_manager/templates/user/user_list.html:27
+msgid "delete"
+msgstr "удалить"
+
+#: task_manager/label/views.py:53
+msgid "delete label"
+msgstr "удалить метку"
+
+#: task_manager/mixins.py:19
+msgid "Please log in."
+msgstr "Войдите в аккаунт"
+
+#: task_manager/models.py:10
+msgid "task status name"
+msgstr "Статус задачи"
+
+#: task_manager/models.py:26
+msgid "task_name"
+msgstr "Название задачи"
+
+#: task_manager/models.py:28 task_manager/templates/task/task_detail.html:7
+msgid "task_description"
+msgstr "Описание задачи"
+
+#: task_manager/models.py:30 task_manager/templates/task/task_detail.html:9
+msgid "task_executor"
+msgstr "Исполнитель"
+
+#: task_manager/models.py:34 task_manager/templates/task/task_detail.html:8
+msgid "task_status"
+msgstr "Статус задачи"
+
+#: task_manager/models.py:38 task_manager/templates/task/task_detail.html:10
+msgid "task_author"
+msgstr "Автор задачи"
+
+#: task_manager/models.py:44 task_manager/templates/task/task_detail.html:12
+msgid "task_labels"
+msgstr "Метки задачи"
+
+#: task_manager/status/views.py:17
+msgid "status list"
+msgstr "Списко статусов"
+
+#: task_manager/status/views.py:28
+msgid "create status"
+msgstr "создать статус"
+
+#: task_manager/status/views.py:39
+msgid "update status"
+msgstr "обновить статус"
+
+#: task_manager/status/views.py:53
+msgid "delete status?"
+msgstr "удалить статус"
+
+#: task_manager/task/filters/TaskModelFilter.py:11
+msgid "Label"
+msgstr "Метка"
+
+#: task_manager/task/filters/TaskModelFilter.py:15
+msgid "own tasks"
+msgstr "свои задачи"
+
+#: task_manager/task/views.py:20
+msgid "create task"
+msgstr "создать задачу"
+
+#: task_manager/task/views.py:36
+msgid "update task"
+msgstr "обновить задачу"
+
+#: task_manager/task/views.py:50
+msgid "task list"
+msgstr "Список задач"
+
+#: task_manager/task/views.py:59
+msgid "task detail"
+msgstr "Детали задачи"
+
+#: task_manager/task/views.py:71
+msgid "delete task?"
+msgstr "удалить задачу"
+
+#: task_manager/templates/labels/label_delete.html:6
+#: task_manager/templates/status/status_delete.html:6
+#: task_manager/templates/task/task_delete.html:6
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: task_manager/templates/labels/label_list.html:10
+msgid "Label Name"
+msgstr "Название метки"
+
+#: task_manager/templates/labels/label_list.html:11
+msgid "Actions"
+msgstr "Действия"
+
+#: task_manager/templates/labels/label_list.html:19
+#: task_manager/templates/status/status_list.html:22
+#: task_manager/templates/task/task_detail.html:19
+#: task_manager/templates/task/task_list.html:36
+#: task_manager/templates/user/user_list.html:26
+msgid "edit"
+msgstr "редактировать"
+
+#: task_manager/templates/layout.html:44
+msgid "logged_in_as"
+msgstr "Вы вошли как -"
+
+#: task_manager/templates/layout.html:45 task_manager/templates/layout.html:56
+msgid "nav_users"
+msgstr "Пользователи"
+
+#: task_manager/templates/layout.html:46
+msgid "nav_statuses"
+msgstr "Статусы"
+
+#: task_manager/templates/layout.html:47
+msgid "nav_labels"
+msgstr "Метки"
+
+#: task_manager/templates/layout.html:48
+msgid "nav_tasks"
+msgstr "Задачи"
+
+#: task_manager/templates/layout.html:52
+msgid "nav_logout"
+msgstr "Выйти"
+
+#: task_manager/templates/layout.html:57
+msgid "nav_login"
+msgstr "Войти"
+
+#: task_manager/templates/layout.html:58
+msgid "nav_register"
+msgstr "Зарегистрироваться"
+
+#: task_manager/templates/layout.html:77
+msgid "source_code"
+msgstr "Исходный код"
+
+#: task_manager/templates/status/status_list.html:6
+msgid "create new status"
+msgstr "создать статус"
+
+#: task_manager/templates/task/task_detail.html:6
+msgid "task"
+msgstr "Задача"
+
+#: task_manager/templates/task/task_list.html:7
+msgid "create new task"
+msgstr "создать задачу"
+
+#: task_manager/templates/task/task_list.html:13
+msgid "search"
+msgstr "искать"
+
+#: task_manager/templates/user/login.html:6
+#: task_manager/templates/user/login.html:22
+msgid "Login"
+msgstr "Вход"
+
+#: task_manager/templates/user/login.html:12
+#: task_manager/templates/user/register.html:22
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/user/login.html:18
+#: task_manager/templates/user/register.html:28
+msgid "Password"
+msgstr "Пароль"
+
+#: task_manager/templates/user/register.html:6
+msgid "Registration"
+msgstr "Регистрация"
+
+#: task_manager/templates/user/register.html:12
+msgid "First Name"
+msgstr "Имя"
+
+#: task_manager/templates/user/register.html:16
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: task_manager/templates/user/register.html:34
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
+
+#: task_manager/templates/user/register.html:38
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: task_manager/user/forms.py:11
+msgid "password"
+msgstr "Пароль"
+
+#: task_manager/user/forms.py:13
+msgid "confirm password"
+msgstr "Подтвердите пароль"
+
+#: task_manager/views.py:13
+msgid "Successfully login"
+msgstr "Вы вошли!"
+
+#: task_manager/views.py:16
+msgid "login"
+msgstr "Вход"
+
+#: task_manager/views.py:17
+msgid "log in"
+msgstr "Войти"
+
+#: task_manager/views.py:25
+msgid "Logger out"
+msgstr "Вы вышли"

@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
+{% load i18n %}
 
 {% block content %}
     {% csrf_token %}
   <div class="row">
-    <h2 class="col s12">Список пользователей</h2>
+    <h2 class="col s12">{{ title }}</h2>
     <table class="striped">
       <thead>
         <tr>
@@ -22,8 +23,8 @@
             <td>{{ user.last_name }}</td>
             <td>{{ user.date_joined }}</td>
             <td>
-              <a class="btn waves-effect waves-light" href="{% url 'user_edit' pk=user.id %}">Редактировать</a>
-              <a class="btn waves-effect waves-light red" href="{% url 'user_delete' pk=user.id %}">Удалить</a>
+              <a class="btn waves-effect waves-light" href="{% url 'user_edit' pk=user.id %}">{% translate 'edit' %}</a>
+              <a class="btn waves-effect waves-light red" href="{% url 'user_delete' pk=user.id %}">{% translate 'delete' %}</a>
             </td>
           </tr>
         {% endfor %}

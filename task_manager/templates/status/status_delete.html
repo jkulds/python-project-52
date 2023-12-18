@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
+{% load i18n %}
+
 {% block content %}
     <div class="container">
-        <p>Вы уверены, что хотите удалить статус "{{ status.name }}"?</p>
+        <p>{% translate "Are you sure you want to delete" %} "{{ status.name }}"?</p>
         <form method="post" action="{% url 'status_delete' status.id %}">
             {% csrf_token %}
-            <button class="waves-effect waves-light btn red" type="submit">Подтвердить удаление</button>
-            <a class="waves-effect waves-light btn" href="{% url 'status_list' %}">Отмена</a>
+            <button type="submit" class="waves-effect waves-light btn red">{{ btn_text }}</button>
         </form>
     </div>
 {% endblock %}

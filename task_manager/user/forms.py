@@ -5,23 +5,15 @@ from django.utils.translation import gettext as _
 
 
 class UserEditForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=True,
-                                 help_text=_('required'))
-    last_name = forms.CharField(max_length=30, required=True,
-                                help_text=_('required'))
-    password = forms.CharField(widget=forms.PasswordInput,
-                               help_text=_('Enter password'))
+    first_name = forms.CharField(max_length=30, required=True)
+    last_name = forms.CharField(max_length=30, required=True)
+    password1 = forms.CharField(widget=forms.PasswordInput,
+                                label=_('password'))
     password2 = forms.CharField(widget=forms.PasswordInput,
-                                help_text=_('Confirm password'))
+                                label=_('confirm password'))
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'password',
+        fields = ['first_name', 'last_name', 'username', 'password1',
                   'password2']
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['password'].widget.attrs['placeholder'] = _(
-            'Enter new password')
-        self.fields['password2'].widget.attrs['placeholder'] = _(
-            'Confirm password')

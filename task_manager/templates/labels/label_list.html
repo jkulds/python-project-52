@@ -1,12 +1,14 @@
 {% extends 'layout.html' %}
+{% load i18n %}
 
 {% block content %}
-  <h2>Label List</h2>
+  <h2>{{ title }}</h2>
+  <a href="{% url 'label_create' %}" class="waves-effect waves-light btn">{{ btn_text }}</a>
   <table class="highlight">
     <thead>
       <tr>
-        <th>Label Name</th>
-        <th>Actions</th>
+        <th>{% translate 'Label Name' %}</th>
+        <th>{% translate 'Actions' %}</th>
       </tr>
     </thead>
     <tbody>
@@ -14,12 +16,11 @@
         <tr>
           <td>{{ label.name }}</td>
           <td>
-            <a href="{% url 'label_update' pk=label.pk %}" class="waves-effect waves-light btn-small">Edit</a>
-            <a href="{% url 'label_delete' pk=label.pk %}" class="waves-effect waves-light btn-small red">Delete</a>
+            <a href="{% url 'label_update' pk=label.pk %}" class="waves-effect waves-light btn-small">{% translate 'edit' %}</a>
+            <a href="{% url 'label_delete' pk=label.pk %}" class="waves-effect waves-light btn-small red">{% translate 'delete' %}</a>
           </td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
-  <a href="{% url 'label_create' %}" class="waves-effect waves-light btn">Create Label</a>
 {% endblock %}

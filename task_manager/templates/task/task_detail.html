@@ -6,7 +6,7 @@
     <h4>{% translate "task" %} {{ task.title }}</h4>
     <p>{% translate "task_description" %}: {{ task.description }}</p>
     <p>{% translate "task_status" %}: {{ task.status }}</p>
-    <p>{% translate "task_assignee" %}: {{ task.assignee }}</p>
+    <p>{% translate "task_executor" %}: {{ task.executor }}</p>
     <p>{% translate "task_author" %}: {{ task.author }}</p>
       {% if task.labels %}
         <p>{% translate "task_labels" %}</p>
@@ -16,7 +16,7 @@
           {% endfor %}
           </ul>
       {% endif %}
-    <a class="btn" href="{% url 'task_update' pk=task.pk %}">{% translate "edit_btn" %}</a>
-    <a class="btn red" href="{% url 'task_delete' pk=task.pk %}">{% translate "delete_btn" %}</a>
+    <a class="btn" href="{% url 'task_update' pk=task.pk %}">{% translate "edit" %}</a>
+    <a class="btn red" href="{% url 'task_delete' pk=task.pk %}">{% translate "delete" %}</a>
   </div>
 {% endblock %}

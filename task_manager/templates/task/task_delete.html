@@ -2,14 +2,11 @@
 
 {% block content %}
   <div class="container">
-    <h2>Delete Task</h2>
-    <p>Are you sure you want to delete "{{ task.title }}"?</p>
-    <form method="post" action="">
+    <h2>{{ title }}</h2>
+    <p>{% translate "Are you sure you want to delete" %} "{{ task.title }}"?</p>
+    <form method="post">
       {% csrf_token %}
-      <button class="btn red waves-effect waves-light" type="submit">Yes, delete</button>
+      <button class="btn red waves-effect waves-light" type="submit">{{ btn_text }}</button>
     </form>
-
-      <br>
-    <a class="btn" href="{% url 'task_list' %}">Cancel</a>
   </div>
 {% endblock %}

@@ -16,14 +16,14 @@ class UserCreateView(CreateView):
     model = User
     template_name = 'form.html'
     form_class = UserEditForm
-    success_url = reverse_lazy('/')
+    success_url = reverse_lazy('login')
 
 
 class UserUpdateView(UpdateView):
     model = User
     template_name = 'form.html'
     form_class = UserEditForm
-    success_url = reverse_lazy('/')
+    success_url = reverse_lazy('index')
 
 
 class UserDeleteView(DeleteView):

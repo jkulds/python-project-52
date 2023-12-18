@@ -12,7 +12,7 @@ class TaskModelTestCase(TestCase):
         self.user = User.objects.create_user(username='testuser', password='testpassword')
         self.client.login(username='testuser', password='testpassword')
         self.status = TaskStatus.objects.create(name="test status")
-        self.task = TaskModel.objects.create(title='Test Task', author=self.user, status=self.status, assignee=self.user)
+        self.task = TaskModel.objects.create(name='Test Task', author=self.user, status=self.status, executor=self.user)
 
     def test_task_model_list_view(self):
         response = self.client.get(reverse('task_list'))
@@ -27,21 +27,21 @@ class TaskModelTestCase(TestCase):
         self.assertContains(response, 'Test Task')
 
     def test_task_model_create_view(self):
-        response = self.client.post(reverse('task_create'), {'title': 'New Task', 'assignee': self.user.id, 'status': self.status.id})
+        response = self.client.post(reverse('task_create'), {'name': 'New Task', 'executor': self.user.id, 'status': self.status.id})
         self.assertEqual(response.status_code, 302)
-        self.assertTrue(TaskModel.objects.filter(title='New Task').exists())
+        self.assertTrue(TaskModel.objects.filter(name='New Task').exists())
 
     def test_task_model_update_view(self):
         response = self.client.post(reverse('task_update', args=[self.task.id]),
-                                    {'title': 'Updated Task', 'assignee': self.user.id, 'status': self.status.id})
+                                    {'name': 'Updated Task', 'executor': self.user.id, 'status': self.status.id})
         self.assertEqual(response.status_code, 302)
         self.task.refresh_from_db()
-        self.assertEqual(self.task.title, 'Updated Task')
+        self.assertEqual(self.task.name, 'Updated Task')
 
     def test_task_model_delete_view(self):
         response = self.client.post(reverse('task_delete', args=[self.task.id]))
         self.assertEqual(response.status_code, 302)
-        self.assertFalse(TaskModel.objects.filter(title='Test Task').exists())
+        self.assertFalse(TaskModel.objects.filter(name='Test Task').exists())
 
     def test_task_model_create_view_with_invalid_data(self):
         response = self.client.post(reverse('task_create'), {})
