@@ -33,7 +33,6 @@ class TaskModelForm(forms.ModelForm):
                                         queryset=User.objects.all(),
                                         required=False)
 
-
     class Meta:
         model = TaskModel
         fields = ['name', 'description', 'executor', 'status', 'labels']
