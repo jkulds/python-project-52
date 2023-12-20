@@ -39,8 +39,8 @@ class LabelUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
     success_message = _('Метка успешно изменена')
     context_object_name = 'label'
     extra_context = {
-        'btn_text': _('Изменить метку'),
-        'title': _('Изменить')
+        'btn_text': _('Изменить '),
+        'title': _('Изменить метку')
     }
 
 
@@ -54,6 +54,6 @@ class LabelDeleteView(AuthMixin, SuccessMessageMixin,
     protected_message = _("cant delete label because of using"),
     protected_url = reverse_lazy('label_list')
     extra_context = {
-        'btn_text': _('delete_confirm'),
-        'title': _('delete label')
+        'btn_text': _('Да, удалить'),
+        'title': _('Удалить метку')
     }
