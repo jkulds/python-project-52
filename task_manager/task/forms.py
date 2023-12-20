@@ -17,16 +17,22 @@ class TaskModelForm(forms.ModelForm):
         widget=forms.Textarea(attrs={'placeholder': _('Описание')}),
         label_suffix=''
     )
-    executor = forms.ModelChoiceField(label_suffix='', label='Исполнитель',
-                                      empty_label='-----------',
-                                      queryset=User.objects.all(),
-                                      required=False)
     status = forms.ModelChoiceField(label_suffix='', label='Статус',
                                     empty_label='-----------',
                                     queryset=TaskStatus.objects.all())
     labels = forms.ModelMultipleChoiceField(label_suffix='', label='Метки',
                                             queryset=LabelModel.objects.all(),
                                             required=False)
+
+    class FullNameModelChoiceField(forms.ModelChoiceField):
+        def label_from_instance(self, obj: User):
+            return ' '.join([obj.first_name, obj.last_name])
+
+    executor = FullNameModelChoiceField(label_suffix='', label='Исполнитель',
+                                        empty_label='-----------',
+                                        queryset=User.objects.all(),
+                                        required=False)
+
 
     class Meta:
         model = TaskModel
