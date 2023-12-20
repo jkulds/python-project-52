@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-20 09:42+0000\n"
+"POT-Creation-Date: 2023-12-20 11:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -314,7 +314,7 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: task_manager/user/views.py:40
 #, fuzzy
-msgid "update user"
+msgid "Изменение пользователя"
 msgstr "Изменение пользователя"
 
 #: task_manager/user/views.py:51
@@ -342,13 +342,3 @@ msgstr "Вход"
 #: task_manager/views.py:25
 msgid "Logger out"
 msgstr "Вы разлогинены"
-
-#, fuzzy
-#~| msgid "task_name"
-#~ msgid "first_name"
-#~ msgstr "Имя"
-
-#, fuzzy
-#~| msgid "task_name"
-#~ msgid "last_name"
-#~ msgstr "Фамилия"

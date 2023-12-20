@@ -33,7 +33,7 @@ class UserEditForm(UserCreationForm):
                                 label=_('Подтверждение пароля'),
                                 label_suffix='')
 
-    class Meta:
+    class Meta(UserCreationForm.Meta):
         model = User
         fields = ['first_name',
                   'last_name',

@@ -35,4 +35,4 @@ makemessages:
 	poetry run python manage.py makemessages --ignore="static" --ignore=".env" -l ru
 
 compilemessages:
-	poetry run python manage.py compilemessages -i ".venv*"
+	poetry run python manage.py compilemessages
