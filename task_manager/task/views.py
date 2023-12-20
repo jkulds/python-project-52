@@ -67,8 +67,8 @@ class TaskModelDetailView(AuthMixin, SuccessMessageMixin, DetailView):
 class TaskModelDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
                           DeleteView):
     model = TaskModel
-    template_name = 'task/task_delete.html'
-    context_object_name = 'task'
+    template_name = 'delete_form.html'
+    context_object_name = 'object'
     success_url = reverse_lazy('task_list')
     success_message = _('Задача успешно удалена')
     protected_message = _("can delete only own tasks"),

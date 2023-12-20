@@ -47,10 +47,10 @@ class LabelUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
 class LabelDeleteView(AuthMixin, SuccessMessageMixin,
                       DeleteOwnMixin, DeleteView):
     model = LabelModel
-    template_name = 'labels/label_delete.html'
+    template_name = 'delete_form.html'
     success_url = reverse_lazy('label_list')
     success_message = _('Метка успешно удалена')
-    context_object_name = 'label'
+    context_object_name = 'object'
     protected_message = _("cant delete label because of using"),
     protected_url = reverse_lazy('label_list')
     extra_context = {

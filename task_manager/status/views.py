@@ -50,10 +50,10 @@ class StatusUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
 class StatusDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
                        DeleteView):
     model = TaskStatus
-    template_name = 'status/status_delete.html'
+    template_name = 'delete_form.html'
     success_url = reverse_lazy('status_list')
     success_message = _('Статус успешно удален')
-    context_object_name = 'status'
+    context_object_name = 'object'
     protected_message = _("cant delete status because of using"),
     protected_url = reverse_lazy('status_list')
     extra_context = {
