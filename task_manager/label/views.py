@@ -13,8 +13,8 @@ class LabelListView(AuthMixin, ListView):
     template_name = 'labels/label_list.html'
     context_object_name = 'labels'
     extra_context = {
-        'btn_text': _('create'),
-        'title': _('label list')
+        'btn_text': _('Создать метку'),
+        'title': _('Метки')
     }
 
 
@@ -26,8 +26,8 @@ class LabelCreateView(AuthMixin, SuccessMessageMixin, CreateView):
     success_message = _('Метка успешно создана')
     context_object_name = 'label'
     extra_context = {
-        'btn_text': _('create'),
-        'title': _('create label')
+        'btn_text': _('Создать'),
+        'title': _('Создать метку')
     }
 
 
@@ -39,8 +39,8 @@ class LabelUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
     success_message = _('Метка успешно изменена')
     context_object_name = 'label'
     extra_context = {
-        'btn_text': _('update label'),
-        'title': _('update')
+        'btn_text': _('Изменить метку'),
+        'title': _('Изменить')
     }
 
 

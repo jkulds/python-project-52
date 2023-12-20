@@ -4,13 +4,13 @@
 {% block content %}
   <div class="container">
     <h2>{{ title }}</h2>
-    <a class="btn" href="{% url 'task_create' %}">{% translate 'create new task' %}</a>
+    <a class="btn" href="{% url 'task_create' %}">{{ btn_text }}</a>
 
     <div>
         <form method="get">
             {{ filter.form }}
             <br>
-            <button class="btn waves-effect waves-light" type="submit">{% translate 'search' %}</button>
+            <button class="btn waves-effect waves-light" type="submit">{% translate 'Показать' %}</button>
         </form>
     </div>
     <table class="highlight">

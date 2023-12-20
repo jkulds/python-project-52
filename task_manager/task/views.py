@@ -18,8 +18,8 @@ class TaskModelCreateView(AuthMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('task_list')
     success_message = _('Задача успешно создана')
     extra_context = {
-        'btn_text': _('create'),
-        'title': _('create task')
+        'btn_text': _('Создать'),
+        'title': _('Создать задачу')
     }
 
     def form_valid(self, form):
@@ -35,8 +35,8 @@ class TaskModelUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('task_list')
     success_message = _('Задача успешно изменена')
     extra_context = {
-        'btn_text': _('update'),
-        'title': _('update task')
+        'btn_text': _('Изменить'),
+        'title': _('Изменить задачу')
     }
 
     def form_valid(self, form):
@@ -50,7 +50,8 @@ class TaskModelListView(AuthMixin, FilterView):
     template_name = 'task/task_list.html'
     context_object_name = 'tasks'
     extra_context = {
-        'title': _('task list')
+        'title': _('Задачи'),
+        'btn_text': _('Создать задачу')
     }
 
 
@@ -59,7 +60,7 @@ class TaskModelDetailView(AuthMixin, SuccessMessageMixin, DetailView):
     template_name = 'task/task_detail.html'
     context_object_name = 'task'
     extra_context = {
-        'title': _('task detail')
+        'title': _('Детали задачи')
     }
 
 
@@ -73,6 +74,6 @@ class TaskModelDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
     protected_message = _("can delete only own tasks"),
     protected_url = reverse_lazy('task_list')
     extra_context = {
-        'btn_text': _('delete_confirm'),
-        'title': _('delete task?')
+        'btn_text': _('Да, удалить'),
+        'title': _('Удалить задачу')
     }

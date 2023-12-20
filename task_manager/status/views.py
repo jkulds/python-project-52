@@ -14,7 +14,7 @@ class StatusListView(AuthMixin, ListView):
     template_name = 'status/status_list.html'
     context_object_name = 'statuses'
     extra_context = {
-        'title': _('status list')
+        'title': _('Статусы')
     }
 
 
@@ -25,8 +25,8 @@ class StatusCreateView(AuthMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('status_list')
     success_message = _('Статус успешно создан')
     extra_context = {
-        'btn_text': _('create'),
-        'title': _('create status')
+        'btn_text': _('Создать'),
+        'title': _('Создать статус')
     }
 
 
@@ -37,8 +37,8 @@ class StatusUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('status_list')
     success_message = _('Статус успешно изменен')
     extra_context = {
-        'btn_text': _('update'),
-        'title': _('update status')
+        'btn_text': _('Изменить'),
+        'title': _('Изменить статус')
     }
 
     def get_object(self, queryset=None):
@@ -57,7 +57,7 @@ class StatusDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
     protected_url = reverse_lazy('status_list')
     extra_context = {
         'btn_text': _('Да, удалить'),
-        'title': _('delete status?')
+        'title': _('Удалить статус')
     }
 
     def get_object(self, queryset=None):
