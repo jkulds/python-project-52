@@ -9,7 +9,8 @@
       <thead>
         <tr>
           <th style="width: 15%;">Идентификатор</th>
-          <th style="width: 40%;">Имя</th>
+          <th style="width: 15%;">Имя пользователя</th>
+          <th style="width: 25%;">Имя</th>
           <th style="width: 20%;">Когда создан</th>
           <th style="width: 25%;">Действия</th>
         </tr>
@@ -18,6 +19,7 @@
         {% for user in users %}
           <tr>
             <td >{{ user.id }}</td>
+            <td >{{ user.username }}</td>
             <td>{{ user.first_name }} {{ user.last_name }}</td>
             <td>{{ user.date_joined }}</td>
             <td>

@@ -56,7 +56,7 @@ class StatusDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
     protected_message = _("cant delete status because of using"),
     protected_url = reverse_lazy('status_list')
     extra_context = {
-        'btn_text': _('delete'),
+        'btn_text': _('delete_confirm'),
         'title': _('delete status?')
     }
 
