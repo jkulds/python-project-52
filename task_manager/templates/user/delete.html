@@ -1,12 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-  <h2 class="header">Удалить пользователя {{ user.username }}?</h2>
+  <h2>{{ title }}</h2>
   <div class="row">
+    <h4 class="header">Вы уверены, что хотите удалить пользователя {{ user.username }}?</h4>
     <form class="col s12" method="post" action="{% url 'user_delete' pk=user.id %}">
       {% csrf_token %}
       {{ form.as_p }}
-      <button class="btn waves-effect waves-light red" type="submit">Удалить</button>
+      <button class="btn waves-effect waves-light red" type="submit">{{ btn_text }}</button>
     </form>
   </div>
 {% endblock %}

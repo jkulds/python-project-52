@@ -52,6 +52,6 @@ class UserDeleteView(AuthMixin, UserPermissionMixin,
     permission_message = _('cant delete another user.')
     permission_url = reverse_lazy('users')
     extra_context = {
-        'btn_text': _('delete'),
-        'title': _('delete user')
+        'btn_text': _('Да, удалить'),
+        'title': _('Удаление пользовавтеля')
     }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-20 11:22+0000\n"
+"POT-Creation-Date: 2023-12-20 12:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,7 +218,7 @@ msgstr "Изменить"
 #: task_manager/templates/status/status_list.html:23
 #: task_manager/templates/task/task_detail.html:20
 #: task_manager/templates/task/task_list.html:37
-#: task_manager/templates/user/user_list.html:27 task_manager/user/views.py:55
+#: task_manager/templates/user/user_list.html:27
 msgid "delete"
 msgstr "Удалить"
 
@@ -326,11 +326,14 @@ msgstr "Изменение пользователя"
 msgid "cant delete another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
+#: task_manager/user/views.py:55
+msgid "Да, удалить"
+msgstr "Да, удалить"
+
 #: task_manager/user/views.py:56
 #, fuzzy
-#| msgid "delete status?"
-msgid "delete user"
-msgstr "удалить статус"
+msgid "Удаление пользовавтеля"
+msgstr "Удаление пользователя"
 
 #: task_manager/views.py:13
 msgid "Successfully login"
@@ -347,3 +350,8 @@ msgstr "Вход"
 #: task_manager/views.py:25
 msgid "Logger out"
 msgstr "Вы разлогинены"
+
+#, fuzzy
+#~| msgid "delete status?"
+#~ msgid "delete user"
+#~ msgstr "удалить статус"
