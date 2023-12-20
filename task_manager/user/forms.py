@@ -29,8 +29,8 @@ class UserEditForm(UserCreationForm):
                                 label_suffix='',)
     password2 = forms.CharField(widget=forms.PasswordInput(
                                     attrs=
-                                    {'placeholder': _('confirm password')}),
-                                label=_('confirm password'),
+                                    {'placeholder': _('Подтверждение пароля')}),
+                                label=_('Подтверждение пароля'),
                                 label_suffix='')
 
     class Meta:

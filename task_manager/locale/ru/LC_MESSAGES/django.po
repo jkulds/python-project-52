@@ -289,8 +289,8 @@ msgid "password"
 msgstr "Пароль"
 
 #: task_manager/user/forms.py:32 task_manager/user/forms.py:33
-msgid "confirm password"
-msgstr "Подтвердите пароль"
+msgid "Подтверждение пароля"
+msgstr "Подтверждение пароля"
 
 #: task_manager/user/views.py:22
 msgid "User registered successfully"
