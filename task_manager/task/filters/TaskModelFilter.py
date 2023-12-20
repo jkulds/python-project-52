@@ -18,7 +18,7 @@ class TaskModelFilter(FilterSet):
         queryset=User.objects.all())
     status = ModelChoiceFilter(
         label_suffix='',
-        label=_('Стасус'),
+        label=_('Статус'),
         queryset=TaskStatus.objects.all())
 
     own = BooleanFilter(

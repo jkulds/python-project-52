@@ -21,7 +21,7 @@ class TaskModelForm(forms.ModelForm):
                                       empty_label='-----------',
                                       queryset=User.objects.all(),
                                       required=False)
-    status = forms.ModelChoiceField(label_suffix='', label='Стасус',
+    status = forms.ModelChoiceField(label_suffix='', label='Статус',
                                     empty_label='-----------',
                                     queryset=TaskStatus.objects.all())
     labels = forms.ModelMultipleChoiceField(label_suffix='', label='Метки',
