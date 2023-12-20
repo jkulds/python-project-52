@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-20 09:02+0000\n"
+"POT-Creation-Date: 2023-12-20 09:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,14 +53,14 @@ msgstr "Создать метку"
 msgid "Метка успешно изменена"
 msgstr "Метка успешно изменена"
 
-#: task_manager/label/views.py:42 task_manager/status/views.py:40
+#: task_manager/label/views.py:42
+msgid "update label"
+msgstr "Изменить метку"
+
+#: task_manager/label/views.py:43 task_manager/status/views.py:40
 #: task_manager/task/views.py:38 task_manager/user/views.py:39
 msgid "update"
 msgstr "Изменить"
-
-#: task_manager/label/views.py:43
-msgid "update label"
-msgstr "Изменить метку"
 
 #: task_manager/label/views.py:52
 msgid "Метка успешно удалена"
@@ -247,7 +247,7 @@ msgstr "Задачи"
 #: task_manager/templates/layout.html:66 task_manager/tests.py:33
 #: task_manager/tests.py:54
 msgid "nav_logout"
-msgstr "Выйти"
+msgstr "Выход"
 
 #: task_manager/templates/layout.html:71 task_manager/tests.py:36
 #: task_manager/tests.py:45
@@ -277,18 +277,6 @@ msgstr "Создать задачу"
 #: task_manager/templates/task/task_list.html:13
 msgid "search"
 msgstr "Искать"
-
-#: task_manager/user/forms.py:10
-#, fuzzy
-#| msgid "task_name"
-msgid "first_name"
-msgstr "Имя"
-
-#: task_manager/user/forms.py:16
-#, fuzzy
-#| msgid "task_name"
-msgid "last_name"
-msgstr "Фамилия"
 
 #: task_manager/user/forms.py:22 task_manager/user/forms.py:23
 msgid "password"
@@ -349,3 +337,13 @@ msgstr "Вход"
 #: task_manager/views.py:25
 msgid "Logger out"
 msgstr "Вы разлогинены"
+
+#, fuzzy
+#~| msgid "task_name"
+#~ msgid "first_name"
+#~ msgstr "Имя"
+
+#, fuzzy
+#~| msgid "task_name"
+#~ msgid "last_name"
+#~ msgstr "Фамилия"
