@@ -10,6 +10,7 @@ class TaskModelFilter(FilterSet):
     labels = ModelChoiceFilter(
         queryset=LabelModel.objects.all(),
         label=_('Метка'),
+        label_suffix='',
     )
 
     executor = ModelChoiceFilter(
