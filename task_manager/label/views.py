@@ -23,6 +23,7 @@ class LabelCreateView(AuthMixin, SuccessMessageMixin, CreateView):
     form_class = LabelForm
     template_name = 'form.html'
     success_url = reverse_lazy('label_list')
+    success_message = _('Метка успешно создана')
     context_object_name = 'label'
     extra_context = {
         'btn_text': _('create'),
@@ -35,10 +36,11 @@ class LabelUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
     form_class = LabelForm
     template_name = 'form.html'
     success_url = reverse_lazy('label_list')
+    success_message = _('Метка успешно изменена')
     context_object_name = 'label'
     extra_context = {
-        'btn_text': _('update'),
-        'title': _('update label')
+        'btn_text': _('update label'),
+        'title': _('update')
     }
 
 
@@ -47,6 +49,7 @@ class LabelDeleteView(AuthMixin, SuccessMessageMixin,
     model = LabelModel
     template_name = 'labels/label_delete.html'
     success_url = reverse_lazy('label_list')
+    success_message = _('Метка успешно удалена')
     context_object_name = 'label'
     protected_message = _("cant delete label because of using"),
     protected_url = reverse_lazy('label_list')

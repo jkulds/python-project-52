@@ -23,6 +23,7 @@ class StatusCreateView(AuthMixin, SuccessMessageMixin, CreateView):
     form_class = TaskStatusForm
     template_name = 'form.html'
     success_url = reverse_lazy('status_list')
+    success_message = _('Статус успешно создан')
     extra_context = {
         'btn_text': _('create'),
         'title': _('create status')
@@ -34,6 +35,7 @@ class StatusUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
     form_class = TaskStatusForm
     template_name = 'form.html'
     success_url = reverse_lazy('status_list')
+    success_message = _('Статус успешно изменен')
     extra_context = {
         'btn_text': _('update'),
         'title': _('update status')
@@ -49,6 +51,7 @@ class StatusDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
     model = TaskStatus
     template_name = 'status/status_delete.html'
     success_url = reverse_lazy('status_list')
+    success_message = _('Статус успешно удален')
     context_object_name = 'status'
     protected_message = _("cant delete status because of using"),
     protected_url = reverse_lazy('status_list')

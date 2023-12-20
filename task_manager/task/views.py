@@ -16,6 +16,7 @@ class TaskModelCreateView(AuthMixin, SuccessMessageMixin, CreateView):
     form_class = TaskModelForm
     template_name = 'form.html'
     success_url = reverse_lazy('task_list')
+    success_message = _('Задача успешно создана')
     extra_context = {
         'btn_text': _('create'),
         'title': _('create task')
@@ -32,6 +33,7 @@ class TaskModelUpdateView(AuthMixin, SuccessMessageMixin, UpdateView):
     template_name = 'form.html'
     context_object_name = 'task'
     success_url = reverse_lazy('task_list')
+    success_message = _('Задача успешно изменена')
     extra_context = {
         'btn_text': _('update'),
         'title': _('update task')
@@ -67,6 +69,7 @@ class TaskModelDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
     template_name = 'task/task_delete.html'
     context_object_name = 'task'
     success_url = reverse_lazy('task_list')
+    success_message = _('Задача успешно удалена')
     protected_message = _("can delete only own tasks"),
     protected_url = reverse_lazy('task_list')
     extra_context = {
