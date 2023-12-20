@@ -14,7 +14,8 @@ class StatusListView(AuthMixin, ListView):
     template_name = 'status/status_list.html'
     context_object_name = 'statuses'
     extra_context = {
-        'title': _('Статусы')
+        'title': _('Статусы'),
+        'btn_text': _('Создать статус'),
     }
 
 
