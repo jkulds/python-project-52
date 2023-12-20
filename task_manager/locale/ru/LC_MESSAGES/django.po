@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-20 09:30+0000\n"
+"POT-Creation-Date: 2023-12-20 09:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,7 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: task_manager/forms.py:10 task_manager/forms.py:12
+#: task_manager/user/forms.py:22 task_manager/user/forms.py:23
 msgid "username_placeholder"
 msgstr "Имя пользователя"
 
@@ -209,7 +210,7 @@ msgstr "Действия"
 #: task_manager/templates/status/status_list.html:22
 #: task_manager/templates/task/task_detail.html:19
 #: task_manager/templates/task/task_list.html:36
-#: task_manager/templates/user/user_list.html:24
+#: task_manager/templates/user/user_list.html:26
 msgid "edit"
 msgstr "Изменить"
 
@@ -217,7 +218,7 @@ msgstr "Изменить"
 #: task_manager/templates/status/status_list.html:23
 #: task_manager/templates/task/task_detail.html:20
 #: task_manager/templates/task/task_list.html:37
-#: task_manager/templates/user/user_list.html:25 task_manager/user/views.py:54
+#: task_manager/templates/user/user_list.html:27 task_manager/user/views.py:54
 msgid "delete"
 msgstr "Удалить"
 
@@ -283,11 +284,11 @@ msgstr "Создать задачу"
 msgid "search"
 msgstr "Искать"
 
-#: task_manager/user/forms.py:22 task_manager/user/forms.py:23
+#: task_manager/user/forms.py:27 task_manager/user/forms.py:28
 msgid "password"
 msgstr "Пароль"
 
-#: task_manager/user/forms.py:27 task_manager/user/forms.py:28
+#: task_manager/user/forms.py:32 task_manager/user/forms.py:33
 msgid "confirm password"
 msgstr "Подтвердите пароль"
 
@@ -296,14 +297,14 @@ msgid "User registered successfully"
 msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/user/views.py:25
-#, fuzzy
-#| msgid "create"
-msgid "create_user"
-msgstr "Зарегистрировать"
-
-#: task_manager/user/views.py:26
 msgid "register"
 msgstr "Регистрация"
+
+#: task_manager/user/views.py:26
+#, fuzzy
+#| msgid "create"
+msgid "Зарегистрировать"
+msgstr "Зарегистрировать"
 
 #: task_manager/user/views.py:36
 #, fuzzy
@@ -313,9 +314,8 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: task_manager/user/views.py:40
 #, fuzzy
-#| msgid "update status"
 msgid "update user"
-msgstr "Обновить статус"
+msgstr "Изменение пользователя"
 
 #: task_manager/user/views.py:51
 msgid "cant delete another user."

@@ -22,8 +22,8 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     success_message = _('User registered successfully')
     success_url = reverse_lazy('login')
     extra_context = {
-        'btn_text': _('create_user'),
-        'title': _('register')
+        'title': _('register'),
+        'btn_text': _('Зарегистрировать')
     }
 
 

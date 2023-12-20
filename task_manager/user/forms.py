@@ -17,6 +17,11 @@ class UserEditForm(UserCreationForm):
                                 max_length=30, required=True,
                                 label='Фамилия',
                                 label_suffix='',)
+    username = forms.CharField(widget=forms.TextInput(
+                                    attrs=
+                                    {'placeholder': _('username_placeholder')}),
+                               label=_('username_placeholder'),
+                               label_suffix='',)
     password1 = forms.CharField(widget=forms.PasswordInput(
                                     attrs=
                                     {'placeholder': _('password')}),
