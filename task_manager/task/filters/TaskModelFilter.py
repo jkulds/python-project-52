@@ -13,6 +13,8 @@ class TaskModelFilter(FilterSet):
         label_suffix='',
     )
 
+    User.__str__ = lambda x: x.first_name + ' ' + x.last_name
+
     executor = ModelChoiceFilter(
         label_suffix='',
         label=_('Исполнитель'),
@@ -35,5 +37,5 @@ class TaskModelFilter(FilterSet):
         return queryset
 
     class Meta:
-        model = TaskModel()
+        model = TaskModel
         fields = ['status', 'executor']
