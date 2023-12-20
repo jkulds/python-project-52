@@ -297,7 +297,7 @@ msgid "User registered successfully"
 msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/user/views.py:25
-msgid "register"
+msgid "Регистрация"
 msgstr "Регистрация"
 
 #: task_manager/user/views.py:26
