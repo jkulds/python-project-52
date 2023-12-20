@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-20 11:14+0000\n"
+"POT-Creation-Date: 2023-12-20 11:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgid "update label"
 msgstr "Изменить метку"
 
 #: task_manager/label/views.py:43 task_manager/status/views.py:40
-#: task_manager/task/views.py:38 task_manager/user/views.py:39
+#: task_manager/task/views.py:38 task_manager/user/views.py:40
 msgid "update"
 msgstr "Изменить"
 
@@ -67,7 +67,7 @@ msgstr "Изменить"
 msgid "Метка успешно удалена"
 msgstr "Метка успешно удалена"
 
-#: task_manager/label/views.py:54 task_manager/user/views.py:49
+#: task_manager/label/views.py:54 task_manager/user/views.py:50
 msgid "cant delete label because of using"
 msgstr "Невозможно удалить, потому что еще используется"
 
@@ -218,7 +218,7 @@ msgstr "Изменить"
 #: task_manager/templates/status/status_list.html:23
 #: task_manager/templates/task/task_detail.html:20
 #: task_manager/templates/task/task_list.html:37
-#: task_manager/templates/user/user_list.html:27 task_manager/user/views.py:54
+#: task_manager/templates/user/user_list.html:27 task_manager/user/views.py:55
 msgid "delete"
 msgstr "Удалить"
 
@@ -308,20 +308,25 @@ msgstr "Зарегистрировать"
 
 #: task_manager/user/views.py:36
 #, fuzzy
+msgid "Пользователь успешно изменен"
+msgstr "Пользователь успешно изменен"
+
+#: task_manager/user/views.py:37
+#, fuzzy
 #| msgid "cant delete another user."
 msgid "cant edit another user"
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: task_manager/user/views.py:40
+#: task_manager/user/views.py:41
 #, fuzzy
 msgid "Изменение пользователя"
 msgstr "Изменение пользователя"
 
-#: task_manager/user/views.py:51
+#: task_manager/user/views.py:52
 msgid "cant delete another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: task_manager/user/views.py:55
+#: task_manager/user/views.py:56
 #, fuzzy
 #| msgid "delete status?"
 msgid "delete user"

@@ -33,6 +33,7 @@ class UserUpdateView(AuthMixin, UserPermissionMixin,
     template_name = 'form.html'
     form_class = UserEditForm
     success_url = reverse_lazy('users')
+    success_message = _('Пользователь успешно изменен')
     permission_message = _('cant edit another user')
     permission_url = reverse_lazy('users')
     extra_context = {
