@@ -1,18 +1,29 @@
 from django import forms
+from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from django_filters import FilterSet, ModelChoiceFilter, BooleanFilter
 
-from task_manager.models import LabelModel, TaskModel
+from task_manager.models import LabelModel, TaskModel, TaskStatus
 
 
 class TaskModelFilter(FilterSet):
     labels = ModelChoiceFilter(
         queryset=LabelModel.objects.all(),
-        label=_('Label')
+        label=_('Метка'),
     )
 
+    executor = ModelChoiceFilter(
+        label_suffix='',
+        label=_('Исполнитель'),
+        queryset=User.objects.all())
+    status = ModelChoiceFilter(
+        label_suffix='',
+        label=_('Стасус'),
+        queryset=TaskStatus.objects.all())
+
     own = BooleanFilter(
-        label=_('own tasks'),
+        label=_('Только свои задачи'),
+        label_suffix='',
         widget=forms.CheckboxInput,
         method='filter_own',
     )
