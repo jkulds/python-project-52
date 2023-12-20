@@ -78,6 +78,10 @@ msgstr "Невозможно удалить, потому что еще испо
 msgid "delete_confirm"
 msgstr "Да, удалить"
 
+
+msgid "Пользователь успешно удален"
+msgstr "Пользователь успешно удален"
+
 #: task_manager/label/views.py:58
 msgid "delete label"
 msgstr "Удалить метку"
