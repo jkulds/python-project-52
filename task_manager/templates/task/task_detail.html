@@ -7,7 +7,7 @@
     <p>{% translate "task_description" %}: {{ task.description }}</p>
     <p>{% translate "task_status" %}: {{ task.status }}</p>
     <p>{% translate "task_executor" %}: {{ task.executor.first_name }} {{ task.executor.last_name }}</p>
-    <p>{% translate "task_author" %}: {{ task.author }}</p>
+    <p>{% translate "task_author" %}: {{ task.author.first_name }} {{ task.author.last_name }}</p>
       {% if task.labels %}
         <p>{% translate "task_labels" %}</p>
           <ul>
