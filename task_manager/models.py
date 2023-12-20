@@ -26,8 +26,10 @@ class TaskModel(TimeStampMixin):
                             verbose_name=_('task_name'))
     description = models.TextField(max_length=4096, blank=True,
                                    verbose_name=_('Описание'))
-    executor = models.ForeignKey(User, on_delete=models.PROTECT,
-                                 verbose_name=_('Исполнитель'))
+    executor = models.ForeignKey(User,
+                                 on_delete=models.PROTECT,
+                                 verbose_name=_('Исполнитель'),
+                                 null=True)
     status = models.ForeignKey(TaskStatus,
                                on_delete=models.PROTECT,
                                related_name='statuses',

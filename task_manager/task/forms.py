@@ -17,25 +17,16 @@ class TaskModelForm(forms.ModelForm):
         widget=forms.Textarea(attrs={'placeholder': _('Описание')}),
         label_suffix=''
     )
-    executor = forms.ChoiceField(label_suffix='', label='Исполнитель')
-    status = forms.ChoiceField(label_suffix='', label='Стасус')
-    labels = forms.MultipleChoiceField(label_suffix='', label='Метки')
-
-    def __init__(self, *args, **kwargs):
-        super(TaskModelForm, self).__init__(*args, **kwargs)
-        empty_label = ('', '--------------')
-        self.fields['executor'].choices = \
-            [(x.id, x.first_name + ' ' + x.last_name) for x in User.objects.all()]
-        self.fields['executor'].choices.insert(0, empty_label)
-
-        self.fields['status'].choices = \
-            [(x.id, x.name) for x in TaskStatus.objects.all()]
-        self.fields['status'].choices.insert(0, empty_label)
-
-        self.fields['labels'].choices = \
-            [(x.id, x.name) for x in LabelModel.objects.all()]
-
-
+    executor = forms.ModelChoiceField(label_suffix='', label='Исполнитель',
+                                      empty_label='-----------',
+                                      queryset=User.objects.all(),
+                                      required=False)
+    status = forms.ModelChoiceField(label_suffix='', label='Стасус',
+                                    empty_label='-----------',
+                                    queryset=TaskStatus.objects.all())
+    labels = forms.ModelMultipleChoiceField(label_suffix='', label='Метки',
+                                            queryset=LabelModel.objects.all(),
+                                            required=False)
 
     class Meta:
         model = TaskModel
