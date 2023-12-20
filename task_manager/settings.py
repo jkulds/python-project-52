@@ -145,3 +145,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     'environment': 'development' if DEBUG else 'production',
 #     'root': BASE_DIR,
 # }
+
+APPEND_SLASH = True
