@@ -55,21 +55,21 @@
                 <a href="{% url 'index' %}" class="brand-logo">{% translate 'ToDo app' %}</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     {% if user.is_authenticated %}
-                        <li><span>{% translate "logged_in_as" %} {{ user.username }}</span></li>
-                        <li><a href="{% url 'users' %}">{% translate 'nav_users' %}</a></li>
-                        <li><a href="{% url 'status_list' %}">{% translate 'nav_statuses' %}</a></li>
-                        <li><a href="{% url 'label_list' %}">{% translate 'nav_labels' %}</a></li>
-                        <li><a href="{% url 'task_list' %}">{% translate 'nav_tasks' %}</a></li>
+                        <li><span>{% translate "Вы вошли как" %} {{ user.username }}</span></li>
+                        <li><a href="{% url 'users' %}">{% translate 'Пользователи' %}</a></li>
+                        <li><a href="{% url 'status_list' %}">{% translate 'Статусы' %}</a></li>
+                        <li><a href="{% url 'label_list' %}">{% translate 'Метки' %}</a></li>
+                        <li><a href="{% url 'task_list' %}">{% translate 'Задачи' %}</a></li>
                         <li>
                             <form method="post" action="{% url 'logout' %}">
                                 {% csrf_token %}
-                                <button type="submit" class="waves-effect waves-light btn">{% translate 'nav_logout' %}</button>
+                                <button type="submit" class="waves-effect waves-light btn">{% translate 'Выход' %}</button>
                             </form>
                         </li>
                     {% else %}
-                        <li><a href="{% url 'users' %}">{% translate 'nav_users' %}</a></li>
-                        <li><a href="{% url 'login' %}">{% translate 'nav_login' %}</a></li>
-                        <li><a href="{% url 'user_create' %}">{% translate 'nav_register' %}</a></li>
+                        <li><a href="{% url 'users' %}">{% translate 'Пользователи' %}</a></li>
+                        <li><a href="{% url 'login' %}">{% translate 'Вход' %}</a></li>
+                        <li><a href="{% url 'user_create' %}">{% translate 'Регистрация' %}</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -88,7 +88,7 @@
 
     <footer class="page-footer">
         <div class="container">
-            <p style="text-align: center">&copy; <a href="https://github.com/jkulds/python-project-52">{% translate "source_code" %}</a></p>
+            <p style="text-align: center">&copy; <a href="https://github.com/jkulds/python-project-52">{% translate "Исходный код" %}</a></p>
         </div>
     </footer>
 

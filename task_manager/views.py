@@ -10,11 +10,11 @@ from task_manager.forms import PlaceholderAuthForm
 class LogIn(SuccessMessageMixin, LoginView):
     form_class = PlaceholderAuthForm
     template_name = 'form.html'
-    success_message = _('Successfully login')
+    success_message = _('Вы залогинены')
     success_url = reverse_lazy('index')
     extra_context = {
-        'btn_text': _('login_btn'),
-        'title': _('log in')
+        'btn_text': _('Войти'),
+        'title': _('Вход')
     }
 
 
@@ -22,5 +22,5 @@ class LogOut(SuccessMessageMixin, LogoutView):
     success_url = reverse_lazy('index')
 
     def dispatch(self, request, *args, **kwargs):
-        messages.info(request, _('Logger out'))
+        messages.info(request, _('Вы разлогинены'))
         return super().dispatch(request, *args, **kwargs)

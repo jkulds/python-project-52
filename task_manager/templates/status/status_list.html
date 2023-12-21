@@ -19,8 +19,8 @@
                         <td>{{ status.id }}</td>
                         <td>{{ status.name }}</td>
                         <td>{{ status.created_at}}</td>
-                        <td><a class="waves-effect waves-light btn" href="{% url 'status_update' status.id %}">{% translate 'edit' %}</a>
-                        <a class="waves-effect waves-light btn red" href="{% url 'status_delete' status.id %}">{% translate 'delete' %}</a></td>
+                        <td><a class="waves-effect waves-light btn" href="{% url 'status_update' status.id %}">{% translate 'Изменить' %}</a>
+                        <a class="waves-effect waves-light btn red" href="{% url 'status_delete' status.id %}">{% translate 'Удалить' %}</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

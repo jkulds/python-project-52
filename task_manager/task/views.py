@@ -71,7 +71,7 @@ class TaskModelDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
     context_object_name = 'object'
     success_url = reverse_lazy('task_list')
     success_message = _('Задача успешно удалена')
-    protected_message = _("can delete only own tasks"),
+    protected_message = _("Вы можете удалять только свои задачи"),
     protected_url = reverse_lazy('task_list')
     extra_context = {
         'btn_text': _('Да, удалить'),

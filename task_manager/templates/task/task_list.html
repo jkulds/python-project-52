@@ -38,8 +38,8 @@
             <td>{{ task.executor.username }}</td>
             <td>{{ task.created_at }}</td>
             <td>
-              <a href="{% url 'task_update' pk=task.pk %}" class="btn">{% translate 'edit' %}</a>
-              <a href="{% url 'task_delete' pk=task.pk %}" class="btn red">{% translate 'delete' %}</a>
+              <a href="{% url 'task_update' pk=task.pk %}" class="btn">{% translate 'Изменить' %}</a>
+              <a href="{% url 'task_delete' pk=task.pk %}" class="btn red">{% translate 'Удалить' %}</a>
             </td>
           </tr>
         {% endfor %}

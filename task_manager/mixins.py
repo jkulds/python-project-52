@@ -16,7 +16,7 @@ class TimeStampMixin(models.Model):
 
 
 class AuthMixin(LoginRequiredMixin):
-    auth_message = _('Please log in.')
+    auth_message = _('Войдите в аккаунт')
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:

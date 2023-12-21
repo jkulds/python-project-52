@@ -19,7 +19,7 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     model = User
     template_name = 'form.html'
     form_class = UserEditForm
-    success_message = _('User registered successfully')
+    success_message = _('Пользователь успешно зарегистрирован')
     success_url = reverse_lazy('login')
     extra_context = {
         'title': _('Регистрация'),
@@ -34,10 +34,10 @@ class UserUpdateView(AuthMixin, UserPermissionMixin,
     form_class = UserEditForm
     success_url = reverse_lazy('users')
     success_message = _('Пользователь успешно изменен')
-    permission_message = _('У вас нет прав для изменения другого пользователя.')
+    permission_message = _('У вас нет прав для изменения другого пользователя')
     permission_url = reverse_lazy('users')
     extra_context = {
-        'btn_text': _('update'),
+        'btn_text': _('Изменить'),
         'title': _('Изменение пользователя')
     }
 
@@ -48,9 +48,9 @@ class UserDeleteView(AuthMixin, UserPermissionMixin,
     template_name = 'user/delete.html'
     success_url = reverse_lazy('users')
     success_message = _('Пользователь успешно удален')
-    protected_message = _("cant delete label because of using"),
+    protected_message = _("Невозможно удалить, т.к. элемент используется"),
     protected_url = reverse_lazy('users')
-    permission_message = _('cant delete another user.')
+    permission_message = _('У вас нет прав для изменения другого пользователя')
     permission_url = reverse_lazy('users')
     extra_context = {
         'btn_text': _('Да, удалить'),

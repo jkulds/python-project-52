@@ -23,7 +23,7 @@ class LabelModel(TimeStampMixin):
 
 class TaskModel(TimeStampMixin):
     name = models.CharField(max_length=255, blank=False, unique=True,
-                            verbose_name=_('task_name'))
+                            verbose_name=_('Имя'))
     description = models.TextField(max_length=4096, blank=True,
                                    verbose_name=_('Описание'))
     executor = models.ForeignKey(User,

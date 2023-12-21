@@ -16,8 +16,8 @@
         <tr>
           <td>{{ label.name }}</td>
           <td>
-            <a href="{% url 'label_update' pk=label.pk %}" class="waves-effect waves-light btn-small">{% translate 'edit' %}</a>
-            <a href="{% url 'label_delete' pk=label.pk %}" class="waves-effect waves-light btn-small red">{% translate 'delete' %}</a>
+            <a href="{% url 'label_update' pk=label.pk %}" class="waves-effect waves-light btn-small">{% translate 'Изменить' %}</a>
+            <a href="{% url 'label_delete' pk=label.pk %}" class="waves-effect waves-light btn-small red">{% translate 'Удалить' %}</a>
           </td>
         </tr>
       {% endfor %}

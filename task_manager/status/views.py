@@ -54,7 +54,7 @@ class StatusDeleteView(AuthMixin, SuccessMessageMixin, DeleteOwnMixin,
     success_url = reverse_lazy('status_list')
     success_message = _('Статус успешно удален')
     context_object_name = 'object'
-    protected_message = _("cant delete status because of using"),
+    protected_message = _("Невозможно удалить, т.к. элемент используется"),
     protected_url = reverse_lazy('status_list')
     extra_context = {
         'btn_text': _('Да, удалить'),
